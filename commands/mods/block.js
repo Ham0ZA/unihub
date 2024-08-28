@@ -22,11 +22,12 @@ module.exports = {
     name: 'block',
     description: 'Block a user from using any commands',
     async execute(message, args) {
+        const ownerId = '944919875674071060';
         const hasAdminPermission = message.member.permissions.has(PermissionsBitField.Flags.Administrator);
 
         // Check if the command is executed by the bot owner, has required roles or admin permission
-        if (message.author.id !== message.guild.ownerID || hasAdminPermission) {
-            return message.reply('You need **Administrator** permission to run this command.');
+        if (message.author.id !== ownerId && !hasAdminPermission) {
+            return message.reply('You do not have permission to use this command.');
         }
 
         const blockedUsers = loadBlockedUsers();
@@ -36,6 +37,10 @@ module.exports = {
             return message.reply('Please provide a valid user ID or mention.');
         }
 
+        if (userId == "944919875674071060") {
+            return message.reply("You can\'t block the bot owner.")
+        }
+            
         if (blockedUsers.includes(userId)) {
             return message.reply('This user is already blocked.');
         }

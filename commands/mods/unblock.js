@@ -22,11 +22,14 @@ module.exports = {
     name: 'unblock',
     description: 'Unblock a user from using any commands',
     async execute(message, args) {
+        const ownerId = '944919875674071060';
+        const requiredRoles = ['1061059678336983130', '924070383064330290'];
+        const hasRole = message.member.roles.cache.some(role => requiredRoles.includes(role.id));
         const hasAdminPermission = message.member.permissions.has(PermissionsBitField.Flags.Administrator);
 
         // Check if the command is executed by the bot owner, has required roles or admin permission
-        if (message.author.id !== message.guild.ownerID || hasAdminPermission) {
-            return message.reply('You need **Administrator** permission to run this command.');
+        if (message.author.id !== ownerId && !hasRole && !hasAdminPermission) {
+            return message.reply('You do not have permission to use this command.');
         }
 
         const blockedUsers = loadBlockedUsers();

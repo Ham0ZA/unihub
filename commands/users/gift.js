@@ -2,7 +2,7 @@ const { ActionRowBuilder, ButtonBuilder, EmbedBuilder, ComponentType } = require
 const fs = require('fs');
 const path = require('path');
 
-const dataPath = path.join(__dirname, '..', '..', 'data', 'collections.json');
+const dataPath = path.join(__dirname, '..', '..', 'data', 'cards.json');
 const generatedImagesPath = path.join(__dirname, '..', '..', 'generated_images');
 
 const loadData = () => {

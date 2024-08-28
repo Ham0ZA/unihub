@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const prefix = require('./../../index.js');
 
-const dataPath = path.join(__dirname, '..', '..', 'data', "users.json");
+const dataPath = path.join(__dirname, '..', '..', 'data', "cards.json");
 const generatedImagesPath = path.join(__dirname, '..', '..', 'generated_images');
 
 const loadData = () => {
@@ -16,19 +16,33 @@ const loadData = () => {
 module.exports = {
     name: 'view',
     aliases: ['v'],
-    description: 'View an item by its code or the most recent item if no code is provided',
-    usage: `${prefix}view [item code]`,
+    description: 'View a card',
+    usage: `${prefix}view [item code or number]`,
     async execute(message, args) {
         const data = loadData();
-        const code = args[0];
+        const input  = args[0];
         let item, ownerId;
 
-        if (code) {
-            // Find item by code
+        // Check if the input is a number (numberOnList)
+        if (input && /^\d+$/.test(input)) {
+            const numberOnList = parseInt(input);
+            const userId = message.author.id;
+            if (Array.isArray(data[userId])) {
+                item = data[userId].find((userItem) => userItem.numberOnList === numberOnList);
+            }
+
+            if (!item) {
+                return message.channel.send('No item with that number was found.');
+            }
+            
+            ownerId = userId; // Set owner as the message author since it's their collection
+        } 
+        // Check if the input is a code
+        else if (input) {
             for (const userId in data) {
                 if (Array.isArray(data[userId])) {
-                    if (data[userId].some((userItem) => userItem.code === code)) {
-                        item = data[userId].find((userItem) => userItem.code === code);
+                    if (data[userId].some((userItem) => userItem.code === input)) {
+                        item = data[userId].find((userItem) => userItem.code === input);
                         ownerId = userId;
                         break;
                     }
@@ -38,36 +52,17 @@ module.exports = {
             if (!item) {
                 return message.channel.send('No item with that code was found.');
             }
-        } else {
-            // Find the most recent item
-            let mostRecentItem = null;
-            let mostRecentTime = 0;
-
-            for (const userId in data) {
-                if (Array.isArray(data[userId])) {
-                    data[userId].forEach((userItem) => {
-                        if (userItem.timestamp && userItem.timestamp > mostRecentTime) {
-                            mostRecentTime = userItem.timestamp;
-                            mostRecentItem = userItem;
-                            ownerId = userId;
-                        }
-                    });
-                }
-            }
-
-            if (!mostRecentItem) {
-                return message.channel.send('No items found.');
-            }
-
-            item = mostRecentItem;
         }
 
+        if (!input) {
+            return message.reply('Please provide a valid item code or number.');
+        }
         // Get image path
         const imagePath = path.join(generatedImagesPath, `${item.code}.png`);
 
         const embed = new EmbedBuilder()
             .setTitle(`${item.name}`)
-            .setDescription(`**Print Number:** ${item.print}\n**Code:** ${item.code}\n**Owner:** <@${ownerId}>\nNumber on List: ${item.numberOnList}`)
+            .setDescription(`**Print Number:** ${item.print}\n**Code:** ${item.code}\n**Owner:** <@${ownerId}>\n**Rarity:** ${item.rarity}`)
             .setImage(`attachment://${item.code}.png`);
 
         message.channel.send({

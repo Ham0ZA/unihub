@@ -1,13 +1,14 @@
 const { exec } = require('child_process');
+const ownerId = process.env.ownerId;
 
 module.exports = {
     name: 'restart',
+    aliases: ["r"],
     description: 'Restarts the bot (restricted to owner only)',
     async execute(message, args) {
-        const ownerId = '944919875674071060';
 
         if (message.author.id !== ownerId) {
-            return message.reply('You do not have permission to use this command.');
+            return message.reply('Command only for bot Owner.');
         }
 
         await message.reply('Bot is restarting...');

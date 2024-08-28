@@ -3,8 +3,6 @@ const fs = require("fs");
 const path = require("path");
 require("dotenv").config();
 
-const keepAlive = require('./server');
-keepAlive();
 
 const { checkBlockedUser } = require("./middleware");
 const { sendLog } = require("./utils/logging"); // Adjust the path accordingly
@@ -17,7 +15,7 @@ const client = new Client({
     ],
 });
 
-const prefix = ".";
+const prefix = process.env.PREFIX;
 client.commands = new Collection();
 client.commandCategories = new Map();
 const cooldowns = new Collection();
@@ -113,74 +111,95 @@ client.once("ready", async () => {
 
 // Event listener for messages
 client.on("messageCreate", async (message) => {
-    if (message.author.bot) return;
-    if (
-        message.content.includes("@here") ||
-        message.content.includes("@everyone") ||
-        message.type == "REPLY"
-    )
-        return false;
+    try {
+        if (message.author.bot) return;
+        if (
+            message.content.includes("@here") ||
+            message.content.includes("@everyone") ||
+            message.type == "REPLY"
+        )
+            return false;
+        
+        /* if (message.author.id === "600542189570883605" ) {
+            return message.reply('sir t9wd')
+        } */
 
-    // Check if the bot was mentioned
-    if (message.mentions.has(client.user)) {
-        message.reply(`My prefix is \`${prefix}\``);
-    }
-    if (!message.content.startsWith(prefix)) return;
+        // Check if the bot was mentioned
+        if (message.content.startsWith('<@' + client.user.id + '>')) {
+            await message.reply(`My prefix is ${prefix}`);
+        }
+        if (!message.content.startsWith(prefix)) return;
 
-    if (global.allowedChannel && message.channel.id !== global.allowedChannel) {
-        const allowedChannelMention = `<#${global.allowedChannel}>`;
-        return message.channel.send(
-            `You can only use the bot in ${allowedChannelMention}.`,
-        );
-    }
-
-    const args = message.content.slice(prefix.length).trim().split(/ +/);
-    const commandName = args.shift().toLowerCase();
-
-    const command =
-        client.commands.get(commandName) ||
-        client.commands.find(
-            (cmd) => cmd.aliases && cmd.aliases.includes(commandName),
-        );
-
-    if (!command) return;
-
-    // Cooldown logic
-    const now = Date.now();
-    const timestamps = cooldowns.get(commandName) || new Collection();
-    const cooldownAmount = 3000; // 3 seconds in milliseconds
-
-    if (timestamps.has(message.author.id)) {
-        const expirationTime =
-            timestamps.get(message.author.id) + cooldownAmount;
-
-        if (now < expirationTime) {
-            const timeLeft = (expirationTime - now) / 3000;
-            return message.reply(
-                `please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${commandName}\` command.`,
+        if (global.allowedChannel && message.channel.id !== global.allowedChannel) {
+            const allowedChannelMention = `<#${global.allowedChannel}>`;
+            return message.channel.send(
+                `You can only use the bot in ${allowedChannelMention}.`,
             );
         }
-    }
 
-    timestamps.set(message.author.id, now);
-    cooldowns.set(commandName, timestamps);
+        const args = message.content.slice(prefix.length).trim().split(/ +/);
+        const commandName = args.shift().toLowerCase();
 
-    checkBlockedUser(message, async () => {
-        try {
-            await command.execute(message, args);
-            sendLog(
-                client,
-                `Command ${commandName} executed by ${message.author.tag}`,
+        const command =
+            client.commands.get(commandName) ||
+            client.commands.find(
+                (cmd) => cmd.aliases && cmd.aliases.includes(commandName),
             );
-        } catch (error) {
-            console.error(error);
-            message.reply("There was an error trying to execute that command.");
-            sendLog(
-                client,
-                `Error executing command ${commandName}: ${error.message}`,
-            );
+
+        if (!command) return;
+
+        // Cooldown logic
+        const now = Date.now();
+        const timestamps = cooldowns.get(commandName) || new Collection();
+        const cooldownAmount = 3000; // 3 seconds in milliseconds
+
+        if (timestamps.has(message.author.id)) {
+            const expirationTime =
+                timestamps.get(message.author.id) + cooldownAmount;
+
+            if (now < expirationTime) {
+                const timeLeft = (expirationTime - now) / 1000;
+                return message.reply(
+                    `please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${commandName}\` command.`,
+                );
+            }
         }
-    });
+
+        timestamps.set(message.author.id, now);
+        cooldowns.set(commandName, timestamps);
+
+        checkBlockedUser(message, async () => {
+            try {
+                await command.execute(message, args);
+                sendLog(
+                    client,
+                    `Command ${commandName} executed by ${message.author.tag}`,
+                );
+            } catch (error) {
+                console.error(error);
+                message.reply("There was an error trying to execute that command.");
+                sendLog(
+                    client,
+                    `Error executing command ${commandName}: ${error.message}`,
+                );
+            }
+        });
+    } catch (error) {
+        console.error("Unhandled error:", error);
+        message.reply("An unexpected error occurred.");
+        // Optionally, you could notify users or log this error to a log channel
+    }
+});
+
+// Global error handling to prevent crashes
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection:', reason);
+    sendLog(client, `Unhandled Rejection: ${reason}`);
+});
+
+process.on('uncaughtException', (error) => {
+    console.error('Uncaught Exception:', error);
+    sendLog(client, `Uncaught Exception: ${error}`);
 });
 
 // Login to Discord with your app's token

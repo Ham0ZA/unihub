@@ -1,20 +1,96 @@
-const {
-    ActionRowBuilder,
-    ButtonBuilder,
-    ComponentType,
-} = require("discord.js");
+const { createCanvas, loadImage, registerFont } = require("canvas");
 const fs = require("fs");
 const path = require("path");
-const { createCanvas, loadImage } = require("canvas");
+const { EmbedBuilder } = require("discord.js");
 
-const dataPath = path.join(__dirname, "..", "..", "data", "users.json");
-const imagesPath = path.join(__dirname, "..", "..", "images");
-const generatedImagesPath = path.join(__dirname, "..", "..", "generated_images");
+// Register custom fonts
+registerFont(
+    path.join(__dirname, "..", "..", "assets", "CinzelDecorative.ttf"),
+    { family: "Cinzel Decorative" },
+);
+registerFont(path.join(__dirname, "..", "..", "assets", "outfit.ttf"), {
+    family: "outfit",
+});
 
+const cooldownPath = path.join(__dirname, "..", "..", "data", "cooldowns.json");
+const currencyPath = path.join(__dirname, "..", "..", "data", "currency.json");
+const GACHA_COOLDOWN = 5 * 60 * 1000; // 10 minutes in milliseconds
+const EGACHA_COOLDOWN = 20 * 1000; // 20 seconds for Egacha item
+
+// Define paths
+const baseImagesPath = path.join(__dirname, "..", "..", "images");
+const framesPath = path.join(__dirname, "..", "..", "frames");
+const generatedImagesPath = path.join(
+    __dirname,
+    "..",
+    "..",
+    "generated_images",
+);
+const dataPath = path.join(__dirname, "..", "..", "data", "cards.json");
+
+// Rarity levels and their respective folders for images and frames
+const rarities = {
+    common: "common",
+    rare: "rare",
+    legendary: "legendary",
+    unique: "unique",
+};
+
+// Custom emojis for rarities
+const rarityEmojis = {
+    unique: "<a:uniquee:1274020241214672927>",
+    legendary: ":first_place:",
+    rare: ":second_place:",
+    common: ":third_place:",
+};
+
+// Probability distribution for rarities
+const rarityChances = {
+    common: 60,
+    rare: 25,
+    legendary: 10,
+    unique: 5,
+};
+
+// Ensure directories and files exist
+const ensureDirectoriesAndFilesExist = () => {
+    Object.values(rarities).forEach((rarity) => {
+        const rarityImagePath = path.join(baseImagesPath, rarity);
+        const rarityFramePath = path.join(framesPath, rarity);
+
+        if (!fs.existsSync(rarityImagePath)) {
+            fs.mkdirSync(rarityImagePath, { recursive: true });
+            console.log(`Created missing directory: ${rarityImagePath}`);
+        }
+
+        if (!fs.existsSync(rarityFramePath)) {
+            fs.mkdirSync(rarityFramePath, { recursive: true });
+            console.log(`Created missing directory: ${rarityFramePath}`);
+        }
+    });
+
+    if (!fs.existsSync(generatedImagesPath)) {
+        fs.mkdirSync(generatedImagesPath, { recursive: true });
+        console.log(`Created missing directory: ${generatedImagesPath}`);
+    }
+
+    if (!fs.existsSync(path.dirname(dataPath))) {
+        fs.mkdirSync(path.dirname(dataPath), { recursive: true });
+        console.log(`Created missing directory: ${path.dirname(dataPath)}`);
+    }
+
+    if (!fs.existsSync(dataPath)) {
+        fs.writeFileSync(dataPath, JSON.stringify({}));
+        console.log(`Created missing file: ${dataPath}`);
+    }
+};
+
+// Save data function
 const saveData = (data) => {
     fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
 };
 
+// Load data function
 const loadData = () => {
     if (!fs.existsSync(dataPath)) {
         return {};
@@ -22,243 +98,550 @@ const loadData = () => {
     return JSON.parse(fs.readFileSync(dataPath));
 };
 
-const getItems = () => {
-    const files = fs.readdirSync(imagesPath);
-    return files.map((file) => ({
-        name: path.parse(file).name,
-        file: file,
-    }));
+// Function to generate a random 6-character code (alphanumeric)
+const generateUniqueCode = () => {
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let code = "";
+    for (let i = 0; i < 6; i++) {
+        code += characters.charAt(
+            Math.floor(Math.random() * characters.length),
+        );
+    }
+    return code;
 };
 
-// User-level cooldowns
-const userCooldowns = new Map();
-const buttonPressCooldowns = new Map();
+// Function to pick a random image and frame based on rarity
+const getRandomImageAndFrame = () => {
+    const rarity = getRandomRarity();
+    const imageFiles = fs.readdirSync(
+        path.join(baseImagesPath, rarities[rarity]),
+    );
+    const frameFiles = fs.readdirSync(path.join(framesPath, rarities[rarity]));
 
-// Function to generate a unique code for an item
-const generateItemCode = () => {
-    return Math.random().toString(36).substring(2, 8).toUpperCase();
+    // Assuming image name format: characterName_animeName.png
+    const randomImageFile =
+        imageFiles[Math.floor(Math.random() * imageFiles.length)];
+    const randomFrameFile =
+        frameFiles[Math.floor(Math.random() * frameFiles.length)];
+
+    // Extract the base name without the extension
+    const baseName = path.parse(randomImageFile).name;
+
+    // Find the last underscore, which separates the character name and anime name
+    const lastUnderscoreIndex = baseName.lastIndexOf("_");
+
+    // Split based on the last underscore to correctly separate characterName and animeName
+    const characterName = baseName.substring(0, lastUnderscoreIndex);
+    const animeName = baseName.substring(lastUnderscoreIndex + 1);
+
+    return {
+        characterName,
+        animeName,
+        imageFile: randomImageFile,
+        frameFile: randomFrameFile,
+        rarity: rarity,
+    };
+};
+
+// Function to select a rarity based on probability
+const getRandomRarity = () => {
+    const total = Object.values(rarityChances).reduce(
+        (sum, chance) => sum + chance,
+        0,
+    );
+    const random = Math.floor(Math.random() * total);
+
+    let sum = 0;
+    for (const [rarity, chance] of Object.entries(rarityChances)) {
+        sum += chance;
+        if (random < sum) {
+            return rarity;
+        }
+    }
 };
 
 module.exports = {
     name: "gacha",
+    aliases: ['g', 'drop', 'd'],
     description: "Gacha pull command",
     async execute(message, args) {
         const userId = message.author.id;
 
-        // Check if user is on command cooldown
-        if (userCooldowns.has(userId)) {
-            const expirationTime = userCooldowns.get(userId);
-            if (Date.now() < expirationTime) {
-                const timeLeft = (expirationTime - Date.now()) / 1000;
-                const timeLeftDisplay =
-                    timeLeft >= 60
-                        ? `${Math.ceil(timeLeft / 60)} minutes`
-                        : `${Math.ceil(timeLeft)} seconds`;
-                return message.reply(
-                    `You are on cooldown! Please wait ${timeLeftDisplay} before using this command again.`
-                );
-            }
+        // Load cooldown data
+        let cooldownData = {};
+        if (fs.existsSync(cooldownPath)) {
+            cooldownData = JSON.parse(fs.readFileSync(cooldownPath));
         }
 
-        // Set user command cooldown to 15 minutes (900,000 milliseconds)
-        const userCooldownTime = 15 * 60 * 1000;
-        userCooldowns.set(userId, Date.now() + userCooldownTime);
+        let currencyData = {};
+        if (fs.existsSync(currencyPath)) {
+            currencyData = JSON.parse(fs.readFileSync(currencyPath));
+        }
 
-        const items = getItems();
+        // Check if user has currency data, if not, initialize it
+        if (!currencyData[userId]) {
+            currencyData[userId] = {
+                ndballs: 0,
+                ddballs: 0,
+                items: {
+                    Egacha: 0,
+                },
+            };
+        }
 
-        const shuffled = items.sort(() => 0.5 - Math.random());
-        const selectedItems = shuffled.slice(0, 2);
-
-        const row = new ActionRowBuilder().addComponents(
-            new ButtonBuilder()
-                .setCustomId(selectedItems[0].name)
-                .setLabel(selectedItems[0].name)
-                .setStyle("1"),
-            new ButtonBuilder()
-                .setCustomId(selectedItems[1].name)
-                .setLabel(selectedItems[1].name)
-                .setStyle("1")
-        );
-
-        const itemWidth = 200;
-        const itemHeight = 320;
-        const gap = 20;
-        const canvasWidth = itemWidth * selectedItems.length + gap * (selectedItems.length - 1);
-        const canvasHeight = itemHeight;
-
-        const canvas = createCanvas(canvasWidth, canvasHeight);
-        const context = canvas.getContext("2d");
-
-        const itemImages = await Promise.all(
-            selectedItems.map((item) =>
-                loadImage(path.join(imagesPath, item.file))
-            )
-        );
-
-        const frameWidth = 13;
-        const textSize = 20;
-
-        context.font = `${textSize}px Arial`;
-
-        // Load data to track prints
+        // Load saved card data
         const data = loadData();
+        if (!data[userId]) data[userId] = [];
 
-        const itemPrints = selectedItems.map((item) => {
-            if (!data.prints) data.prints = {};
-            if (!data.prints[item.name]) data.prints[item.name] = 0;
-            data.prints[item.name] += 1;
-            return data.prints[item.name];
-        });
+        // Ensure that the user's currency data exists and is initialized
+        if (!currencyData[userId]) {
+            currencyData[userId] = {
+                items: {
+                    Egacha: 0, // Set default value for Gacha items
+                },
+            };
+        }
 
-        context.clearRect(0, 0, canvasWidth, canvasHeight);
-        context.fillStyle = "rgba(0, 0, 0, 0)"; // Transparent background
+        // Ensure that items object exists for the user
+        if (!currencyData[userId].items) {
+            currencyData[userId].items = {
+                Egacha: 0, // Set default value for Gacha items
+            };
+        }
 
-        selectedItems.forEach((item, index) => {
-            const x = index * (itemWidth + gap);
-            const y = 0;
-            context.drawImage(itemImages[index], x, y, itemWidth, itemHeight);
-            context.lineWidth = frameWidth;
-            context.strokeStyle = "rgba(0, 0, 0, 0.5)"; // Transparent frame
-            context.strokeRect(x, y, itemWidth, itemHeight);
-            context.fillStyle = "black";
+        // Ensure that Gacha property exists in the items object
+        if (currencyData[userId].items.Egacha === undefined) {
+            currencyData[userId].items.Egacha = 0; // Set default value for Gacha items
+        }
 
-            // Show the print number on the image during drop
-            const printText = `p-${itemPrints[index]}`;
+        // Ensure directories and files exist
+        ensureDirectoriesAndFilesExist();
 
-            const textX = x + itemWidth - context.measureText(item.name).width - 10;
-            const textY = textSize + 10;
-            const printX = x + 10;
-            const printY = y + itemHeight - 10;
+        // Check if user is on cooldown
+        const now = Date.now();
 
-            context.fillText(item.name, textX, textY);
-            context.fillText(printText, printX, printY);
+        if (
+            cooldownData[userId]?.gacha &&
+            now - cooldownData[userId].gacha < GACHA_COOLDOWN &&
+            currencyData[userId].items.Egacha < 1
+        ) {
+            const timeLeft =
+                GACHA_COOLDOWN - (now - cooldownData[userId].gacha);
+            const minutesLeft = Math.floor(timeLeft / (1000 * 60));
+            const secondsLeft = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            return message.reply(
+                `You need to wait \`${minutesLeft} minutes\` and \`${secondsLeft} seconds\`.`,
+            );
+        } else if (
+            cooldownData[userId]?.gacha &&
+            now - cooldownData[userId].gacha < GACHA_COOLDOWN &&
+            currencyData[userId].items.Egacha >= 1
+        ) {
+            // Check for Egacha cooldown
+            if (
+                cooldownData[userId]?.egacha &&
+                now - cooldownData[userId].egacha < EGACHA_COOLDOWN
+            ) {
+                // Egacha item is still on cooldown
+                const timeLeft =
+                    EGACHA_COOLDOWN - (now - cooldownData[userId].egacha);
+                const secondsLeft = Math.floor(timeLeft / 1000);
+                return message.reply(
+                    `Your Egacha item is on cooldown. Please wait \`${secondsLeft} seconds\` before using it again.`,
+                );
+            }
 
-            // Save each individual image with text
-            const itemCanvas = createCanvas(itemWidth, itemHeight);
-            const itemContext = itemCanvas.getContext("2d");
-            itemContext.drawImage(itemImages[index], 0, 0, itemWidth, itemHeight);
-            itemContext.font = `${textSize}px Arial`;
-            itemContext.fillStyle = "black";
-
-            // Add text to the item image
-            itemContext.fillText(item.name, textX - x, textY);
-            itemContext.fillText(printText, printX - x, printY);
-
-            const itemBuffer = itemCanvas.toBuffer();
-            fs.writeFileSync(path.join(generatedImagesPath, `${generateItemCode()}.png`), itemBuffer);
-        });
-
-        const buffer = canvas.toBuffer();
-
-        const initialMessage = await message.channel.send({
-            content: `${message.author} is dropping items! Choose one:`,
-            files: [{ attachment: buffer, name: "gacha.png" }],
-            components: [row],
-        });
-
-        const filter = (interaction) => interaction.isButton();
-
-        const collector = initialMessage.createMessageComponentCollector({
-            filter,
-            componentType: ComponentType.Button,
-            time: 60 * 1000,
-        });
-
-        collector.on("collect", async (interaction) => {
-            const chosenItem = selectedItems.find(
-                (item) => item.name === interaction.customId
+            // Egacha item used successfully, apply Egacha cooldown
+            currencyData[userId].items.Egacha -= 1;
+            fs.writeFileSync(
+                currencyPath,
+                JSON.stringify(currencyData, null, 2),
             );
 
-            if (chosenItem) {
-                const userId = interaction.user.id;
-                const data = loadData();
+            // Set Egacha cooldown
+            cooldownData[userId].egacha = now;
+            fs.writeFileSync(
+                cooldownPath,
+                JSON.stringify(cooldownData, null, 2),
+            );
 
-                // Initialize data.prints and data[userId] if they don't exist
-                if (!data.prints) data.prints = {};
-                if (!data[userId]) data[userId] = [];
+            await message.reply(
+                `You used an Egacha item! You now have \`${currencyData[userId].items.Egacha !== undefined ? currencyData[userId].items.Egacha : "no"}\` Egacha items left.`,
+            );
+        }
 
-                // Increment the print count for the chosen item
-                if (!data.prints[chosenItem.name]) {
-                    data.prints[chosenItem.name] = 0;
+        // Pick a random image and frame
+        const selectedImageAndFrame = getRandomImageAndFrame();
+
+        // Increment print number for the selected image and rarity
+        if (!data.prints) data.prints = {};
+        if (!data.prints[selectedImageAndFrame.characterName])
+            data.prints[selectedImageAndFrame.characterName] = {};
+        if (
+            !data.prints[selectedImageAndFrame.characterName][
+                selectedImageAndFrame.rarity
+            ]
+        ) {
+            data.prints[selectedImageAndFrame.characterName][
+                selectedImageAndFrame.rarity
+            ] = 0;
+        }
+        data.prints[selectedImageAndFrame.characterName][
+            selectedImageAndFrame.rarity
+        ] += 1;
+        const printNumber =
+            data.prints[selectedImageAndFrame.characterName][
+                selectedImageAndFrame.rarity
+            ];
+
+        // Generate a unique 6-character code
+        const uniqueCode = generateUniqueCode();
+
+        // Check if it's a unique card (rarity === 'unique')
+        if (selectedImageAndFrame.rarity === "unique") {
+            // Load the GIF from the 5star folder inside unique
+            const gifPath = path.join(
+                __dirname,
+                "..",
+                "..",
+                "images",
+                "5star",
+                "celebration.gif",
+            );
+
+            // Send the GIF first
+            const gifMessage = await message.channel.send({
+                files: [{ attachment: gifPath, name: "celebration.gif" }],
+            });
+
+            // Wait for the GIF to finish (set duration, e.g., 5 seconds)
+            await new Promise((resolve) => setTimeout(resolve, 5000));
+
+            // Create canvas with an additional size for the frame
+            const printText = `P${printNumber}`;
+            const cardWidth = 250;
+            const cardHeight = 360;
+            const framePadding = 10;
+            const canvasWidth = cardWidth + framePadding;
+            const canvasHeight = cardHeight + framePadding;
+
+            const canvas = createCanvas(canvasWidth, canvasHeight);
+            const context = canvas.getContext("2d");
+
+            // Load and draw the image
+            const image = await loadImage(
+                path.join(
+                    baseImagesPath,
+                    rarities[selectedImageAndFrame.rarity],
+                    selectedImageAndFrame.imageFile,
+                ),
+            );
+            context.drawImage(
+                image,
+                framePadding / 2,
+                framePadding / 2,
+                cardWidth,
+                cardHeight,
+            );
+
+            // Load and draw the frame on top of the image
+            const frame = await loadImage(
+                path.join(
+                    framesPath,
+                    rarities[selectedImageAndFrame.rarity],
+                    selectedImageAndFrame.frameFile,
+                ),
+            );
+            context.drawImage(frame, 0, 0, canvasWidth, canvasHeight);
+
+            // Function to dynamically set the font size to fit within the available width
+            function setDynamicFontSize(text, maxWidth) {
+                let fontSize = 28; // Start with a base font size
+                context.font = `${fontSize}px "Cinzel Decorative"`;
+
+                while (
+                    context.measureText(text).width > maxWidth &&
+                    fontSize > 10
+                ) {
+                    fontSize--; // Decrease the font size
+                    context.font = `${fontSize}px "Cinzel Decorative"`;
                 }
-                data.prints[chosenItem.name] += 1;
 
-                // Generate a unique code for the item
-                const itemCode = generateItemCode();
-
-                // Store item data with the generated code
-                data[userId].push({
-                    name: chosenItem.name,
-                    print: `${data.prints[chosenItem.name]}`,
-                    numberOnList: data[userId].length + 1, // Assuming 1-indexed
-                    code: itemCode,
-                });
-
-                // Save updated prints data
-                saveData(data);
-
-                // Set button press cooldown to 5 minutes (300,000 milliseconds)
-                buttonPressCooldowns.set(userId, Date.now() + 5 * 60 * 1000);
-
-                // Disable the pressed button
-                const updatedComponents = row.components.map((component) => {
-                    if (component.customId === interaction.customId) {
-                        return component.setDisabled(true);
-                    }
-                    return component;
-                });
-
-                // Update the initial message to disable the selected button
-                await initialMessage.edit({
-                    components: [],
-                });
-
-                // Save the chosen item image with text
-                const itemIndex = selectedItems.indexOf(chosenItem);
-                const itemCanvas = createCanvas(itemWidth, itemHeight);
-                const itemContext = itemCanvas.getContext("2d");
-                itemContext.drawImage(itemImages[itemIndex], 0, 0, itemWidth, itemHeight);
-                itemContext.font = `${textSize}px Arial`;
-                itemContext.fillStyle = "black";
-
-                // Add text to the chosen item image
-                const textX = itemWidth - itemContext.measureText(chosenItem.name).width - 10;
-                const textY = textSize + 10;
-                const printX = 10;
-                const printY = itemHeight - 10;
-
-                itemContext.fillText(chosenItem.name, textX, textY);
-                itemContext.fillText(`p-${data.prints[chosenItem.name]}`, printX, printY);
-
-                const itemBuffer = itemCanvas.toBuffer();
-                fs.writeFileSync(path.join(generatedImagesPath, `${itemCode}.png`), itemBuffer);
-
-                // Send a new message after 2 seconds
-                setTimeout(async () => {
-                    await message.channel.send({
-                        content: `${interaction.user} selected ${chosenItem.name}. Code: ${itemCode}`,
-                    });
-                }, 2000);
-
-                // Stop collector if no more buttons are left
-                if (updatedComponents.every((component) => component.disabled)) {
-                    collector.stop();
-                }
+                return fontSize;
             }
-        });
 
-        collector.on("end", async (collected) => {
-            if (collected.size === 0) {
-                await initialMessage.edit({
-                    content: "No one selected any item in time.",
-                    components: [],
-                });
+            // Define the maximum width for the text area (subtract padding)
+            const maxNameWidth = cardWidth - 40; // Adjust if needed
+
+            // Adjust font size for the name text to fit within the image
+            const nameFontSize = setDynamicFontSize(
+                selectedImageAndFrame.characterName,
+                maxNameWidth,
+            );
+            context.font = `${nameFontSize}px "Cinzel Decorative"`;
+
+            // Add a shadow effect for the text
+            context.shadowColor = "rgba(0, 0, 0, 0.5)"; // Shadow color (semi-transparent black)
+            context.shadowBlur = 8; // Amount of blur
+            context.shadowOffsetX = 2; // Horizontal shadow offset
+            context.shadowOffsetY = 2; // Vertical shadow offset
+
+            // Add a text stroke (outline)
+            context.strokeStyle = "white"; // The stroke color (white)
+            context.lineWidth = 4; // Stroke width
+
+            // Draw the character name text with a stroke and fill
+            const nameText = selectedImageAndFrame.characterName;
+            const nameTextWidth = context.measureText(nameText).width;
+            const nameX = (canvasWidth - nameTextWidth) / 2;
+            const nameY = canvasHeight - 40; // Adjust the vertical position as needed
+            context.strokeText(nameText, nameX, nameY); // Draw the outline (stroke)
+            context.fillText(nameText, nameX, nameY); // Draw the filled text
+
+            // Reset shadow settings to default for other elements
+            context.shadowColor = "transparent"; // No shadow
+            context.shadowBlur = 0;
+            context.shadowOffsetX = 0;
+            context.shadowOffsetY = 0;
+
+            // Print number at the top left of the frame
+            context.font = '25px "Cinzel Decorative""'; // Default font size for the print number
+            context.strokeText(printText, 20, 38); // Draw the outline for the print number
+            context.fillText(printText, 20, 38); // Draw the filled text for the print number
+
+            // Save the generated image with a unique name
+            const imagePath = path.join(
+                generatedImagesPath,
+                `${uniqueCode}.png`,
+            );
+            const buffer = canvas.toBuffer();
+            fs.writeFileSync(imagePath, buffer);
+
+            // Save card information in the user's card array
+            const cardNumber = data[userId].length + 1;
+            data[userId].push({
+                name: selectedImageAndFrame.characterName,
+                anime: selectedImageAndFrame.animeName,
+                rarity: rarityEmojis[selectedImageAndFrame.rarity], // Use emoji instead of rarity name
+                print: printNumber,
+                numberOnList: cardNumber,
+                code: uniqueCode,
+            });
+
+            // Save the updated data
+            saveData(data);
+
+            // Create an embed with card details
+            const cardEmbed = new EmbedBuilder()
+                .setAuthor({
+                    name: message.author.username,
+                    iconURL: message.author.displayAvatarURL(),
+                })
+                .setDescription(
+                    `Dropped **${selectedImageAndFrame.characterName}** from\n **${selectedImageAndFrame.animeName}**`,
+                )
+                .setColor("Random")
+                .setImage(`attachment://${uniqueCode}.png`)
+                .addFields(
+                    { name: "Print:", value: `P${printNumber}`, inline: true },
+                    {
+                        name: "Rarity:",
+                        value: rarityEmojis[selectedImageAndFrame.rarity],
+                        inline: true,
+                    },
+                    { name: "Code:", value: uniqueCode, inline: true },
+                )
+                .setTimestamp();
+
+            // Check if user is on cooldown
+            if (now - (cooldownData[userId]?.gacha || 0) < GACHA_COOLDOWN) {
+                // User is on cooldown
+                if (currencyData[userId].items.Egacha >= 1) {
+                } else {
+                    // User is on cooldown and doesn't have a Gacha item
+                    const timeLeft =
+                        GACHA_COOLDOWN - (now - cooldownData[userId].gacha);
+                }
             } else {
-                // Remove the remaining button if time runs out
-                await initialMessage.edit({
-                    components: [],
-                });
+                // User is not on cooldown, proceed with normal drop
+                // Save the current time as the last time this command was used
+                if (!cooldownData[userId]) cooldownData[userId] = {};
+                cooldownData[userId].gacha = now;
+                fs.writeFileSync(
+                    cooldownPath,
+                    JSON.stringify(cooldownData, null, 2),
+                );
             }
-        });
+
+            // Edit the original message to replace the GIF with the card
+            await gifMessage.edit({
+                embeds: [cardEmbed],
+                files: [{ attachment: imagePath, name: `${uniqueCode}.png` }],
+            });
+        } else {
+            const printText = `P${printNumber}`;
+            const cardWidth = 250;
+            const cardHeight = 360;
+            const framePadding = 10;
+            const canvasWidth = cardWidth + framePadding;
+            const canvasHeight = cardHeight + framePadding;
+
+            const canvas = createCanvas(canvasWidth, canvasHeight);
+            const context = canvas.getContext("2d");
+
+            // Load and draw the image
+            const image = await loadImage(
+                path.join(
+                    baseImagesPath,
+                    rarities[selectedImageAndFrame.rarity],
+                    selectedImageAndFrame.imageFile,
+                ),
+            );
+            context.drawImage(
+                image,
+                framePadding / 2,
+                framePadding / 2,
+                cardWidth,
+                cardHeight,
+            );
+
+            // Load and draw the frame on top of the image
+            const frame = await loadImage(
+                path.join(
+                    framesPath,
+                    rarities[selectedImageAndFrame.rarity],
+                    selectedImageAndFrame.frameFile,
+                ),
+            );
+            context.drawImage(frame, 0, 0, canvasWidth, canvasHeight);
+
+            // Function to dynamically set the font size to fit within the available width
+            function setDynamicFontSize(text, maxWidth) {
+                let fontSize = 28; // Start with a base font size
+                context.font = `${fontSize}px "outfit"`;
+
+                while (
+                    context.measureText(text).width > maxWidth &&
+                    fontSize > 10
+                ) {
+                    fontSize--; // Decrease the font size
+                    context.font = `${fontSize}px "outfit"`;
+                }
+
+                return fontSize;
+            }
+
+            // Define the maximum width for the text area (subtract padding)
+            const maxNameWidth = cardWidth - 20; // Adjust if needed
+
+            // Adjust font size for the name text to fit within the image
+            const nameFontSize = setDynamicFontSize(
+                selectedImageAndFrame.characterName,
+                maxNameWidth,
+            );
+            context.font = `${nameFontSize}px "outfit"`;
+
+            // Add a shadow effect for the text
+            context.shadowColor = "rgba(0, 0, 0, 0.5)"; // Shadow color (semi-transparent black)
+            context.shadowBlur = 8; // Amount of blur
+            context.shadowOffsetX = 2; // Horizontal shadow offset
+            context.shadowOffsetY = 2; // Vertical shadow offset
+
+            // Add a text stroke (outline)
+            context.strokeStyle = "white"; // The stroke color (white)
+            context.lineWidth = 4; // Stroke width
+
+            // Draw the character name text with a stroke and fill
+            const nameText = selectedImageAndFrame.characterName;
+            const nameTextWidth = context.measureText(nameText).width;
+            const nameX = (canvasWidth - nameTextWidth) / 2;
+            const nameY = canvasHeight - 40; // Adjust the vertical position as needed
+            context.strokeText(nameText, nameX, nameY); // Draw the outline (stroke)
+            context.fillText(nameText, nameX, nameY); // Draw the filled text
+
+            // Reset shadow settings to default for other elements
+            context.shadowColor = "transparent"; // No shadow
+            context.shadowBlur = 0;
+            context.shadowOffsetX = 0;
+            context.shadowOffsetY = 0;
+
+            // Print number at the top left of the frame
+            context.font = '25px "outfit"'; // Default font size for the print number
+            context.strokeText(printText, 20, 39); // Draw the outline for the print number
+            context.fillText(printText, 20, 39); // Draw the filled text for the print number
+
+            // Save the generated image with a unique name
+            const imagePath = path.join(
+                generatedImagesPath,
+                `${uniqueCode}.png`,
+            );
+            const buffer = canvas.toBuffer();
+            fs.writeFileSync(imagePath, buffer);
+
+            // Save card information in the user's card array
+            const cardNumber = data[userId].length + 1;
+            data[userId].push({
+                name: selectedImageAndFrame.characterName,
+                anime: selectedImageAndFrame.animeName,
+                rarity: rarityEmojis[selectedImageAndFrame.rarity], // Use emoji instead of rarity name
+                print: printNumber,
+                numberOnList: cardNumber,
+                code: uniqueCode,
+            });
+
+            // Save the updated data
+            saveData(data);
+
+            // Get current time
+            const now = Date.now();
+
+            // Check if user is on cooldown
+            if (now - (cooldownData[userId]?.gacha || 0) < GACHA_COOLDOWN) {
+                // User is on cooldown
+                if (currencyData[userId].items.Egacha >= 1) {
+                } else {
+                    // User is on cooldown and doesn't have a Gacha item
+                    const timeLeft =
+                        GACHA_COOLDOWN - (now - cooldownData[userId].gacha);
+                }
+            } else {
+                // User is not on cooldown, proceed with normal drop
+                // Save the current time as the last time this command was used
+                if (!cooldownData[userId]) cooldownData[userId] = {};
+                cooldownData[userId].gacha = now;
+                fs.writeFileSync(
+                    cooldownPath,
+                    JSON.stringify(cooldownData, null, 2),
+                );
+            }
+
+            // Create an embed with card details
+            const cardEmbed = new EmbedBuilder()
+                .setAuthor({
+                    name: message.author.username,
+                    iconURL: message.author.displayAvatarURL(),
+                })
+                .setDescription(
+                    `Dropped **${selectedImageAndFrame.characterName}** from\n **${selectedImageAndFrame.animeName}**`,
+                )
+                .setColor("Random")
+                .setImage(`attachment://${uniqueCode}.png`)
+                .addFields(
+                    { name: "Print:", value: `P${printNumber}`, inline: true },
+                    {
+                        name: "Rarity:",
+                        value: rarityEmojis[selectedImageAndFrame.rarity],
+                        inline: true,
+                    },
+                    { name: "Code:", value: uniqueCode, inline: true },
+                )
+                .setTimestamp();
+
+            // Send the card as a message with the image attached
+            await message.channel.send({
+                embeds: [cardEmbed],
+                files: [{ attachment: imagePath, name: `${uniqueCode}.png` }],
+            });
+        }
     },
 };

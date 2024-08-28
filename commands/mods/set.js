@@ -1,11 +1,11 @@
 const { PermissionsBitField, EmbedBuilder } = require('discord.js');
-const { prefix } = require('../../index.js'); // Assuming prefix is defined in the config file
+const prefix = `.`
 
 module.exports = {
     name: 'set',
     aliases: ['s'],
     description: 'Give the bot access to a mentioned channel',
-    usage: `${prefix}set <#channel>`,
+    usage: `${prefix}set <#channelID>`,
     async execute(message, args) {
         // Check if the user has the required roles or permissions
         const requiredRoles = ['1061059678336983130', '924070383064330290'];
