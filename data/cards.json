@@ -1,30 +1,1855 @@
 {
   "944919875674071060": [
     {
+      "name": "Broly",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 1,
+      "code": "RHTYCH"
+    },
+    {
+      "name": "Satan",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 2,
+      "code": "24RCXD"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 3,
+      "code": "CHRY05"
+    },
+    {
+      "name": "Broly",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 4,
+      "code": "63L9IV"
+    },
+    {
+      "name": "Itachi Uchiha",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 5,
+      "code": "F4V3HL"
+    },
+    {
+      "name": "Satoru Gojo",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 6,
+      "code": "HCHGEN"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":first_place:",
+      "print": 1,
+      "numberOnList": 7,
+      "code": "XOL7MN"
+    },
+    {
+      "name": "Monkey D. Luffy",
+      "anime": "One Piece",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 8,
+      "code": "L23HTF"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 9,
+      "code": "LB9KR3"
+    },
+    {
+      "name": "Satan",
+      "anime": "Dragon Ball",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 10,
+      "code": "Y3VSFO"
+    },
+    {
+      "name": "Madara Uchiha",
+      "anime": "Naruto",
+      "rarity": ":first_place:",
+      "print": 2,
+      "numberOnList": 11,
+      "code": "LVMI9U"
+    },
+    {
+      "name": "Cid Kagenou",
+      "anime": "Eminence in Shadow",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 12,
+      "code": "JGB6PF"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 13,
+      "code": "JPPNKM"
+    },
+    {
+      "name": "Escanor",
+      "anime": "The Seven Deadly Deadly Sins",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 14,
+      "code": "0TO854"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 15,
+      "code": "ZV183D"
+    },
+    {
+      "name": "Satan",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 16,
+      "code": "R3O0PH"
+    },
+    {
+      "name": "Choso",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 17,
+      "code": "1SYEUZ"
+    },
+    {
+      "name": "Broly",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 18,
+      "code": "89LT67"
+    },
+    {
+      "name": "Guy",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 19,
+      "code": "N0XS5C"
+    },
+    {
+      "name": "Satan",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 20,
+      "code": "1C0R22"
+    },
+    {
+      "name": "Zeta",
+      "anime": "Eminence in Shadow",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 21,
+      "code": "QX2TDI"
+    },
+    {
+      "name": "Choso",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 22,
+      "code": "E35VS6"
+    },
+    {
+      "name": "Choso",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 2,
+      "numberOnList": 23,
+      "code": "D1FCNY"
+    },
+    {
+      "name": "Itachi Uchiha",
+      "anime": "Naruto",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 1,
+      "numberOnList": 24,
+      "code": "2T2RQ0"
+    },
+    {
+      "name": "Lelouch Lamperouge",
+      "anime": "Code Geass",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 25,
+      "code": "F15REQ"
+    },
+    {
+      "name": "Mei Mei",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 3,
+      "numberOnList": 26,
+      "code": "HDAW1U"
+    },
+    {
+      "name": "Itachi Uchiha",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 27,
+      "code": "59HOKP"
+    },
+    {
+      "name": "Sukuna",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 28,
+      "code": "KNMNGT"
+    },
+    {
+      "name": "Escanor",
+      "anime": "The Seven Deadly Sins",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 1,
+      "numberOnList": 29,
+      "code": "U1I95R"
+    },
+    {
+      "name": "Lelouch Lamperouge",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 30,
+      "code": "N6XYQW"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 31,
+      "code": "ZKSRJ9"
+    },
+    {
+      "name": "Sukuna",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 32,
+      "code": "UIX4R5"
+    },
+    {
+      "name": "Guy",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 33,
+      "code": "PYP4JK"
+    },
+    {
+      "name": "Tsunade",
+      "anime": "Naruto",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 34,
+      "code": "IQ847Q"
+    },
+    {
+      "name": "Satoru Gojo",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 3,
+      "numberOnList": 35,
+      "code": "JM2MVR"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 36,
+      "code": "2CTWTA"
+    },
+    {
+      "name": "Cid Kagenou",
+      "anime": "Eminence in Shadow",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 37,
+      "code": "C2FGGG"
+    },
+    {
+      "name": "Satan",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 7,
+      "numberOnList": 38,
+      "code": "JQP05R"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 8,
+      "numberOnList": 39,
+      "code": "OYWJYF"
+    },
+    {
+      "name": "Naruto",
+      "anime": "Naruto",
+      "rarity": ":first_place:",
+      "print": 1,
+      "numberOnList": 40,
+      "code": "9FZ8FP"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 10,
+      "numberOnList": 41,
+      "code": "FS2UXE"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 11,
+      "numberOnList": 42,
+      "code": "NPTXFZ"
+    },
+    {
+      "name": "Lelouch Lamperouge",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 8,
+      "numberOnList": 43,
+      "code": "6AWL1R"
+    },
+    {
+      "name": "Choso",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 44,
+      "code": "LGL3I7"
+    },
+    {
+      "name": "Guy",
+      "anime": "Naruto",
+      "rarity": ":second_place:",
+      "print": 4,
+      "numberOnList": 45,
+      "code": "7961EE"
+    },
+    {
+      "name": "Zeta",
+      "anime": "Eminence in Shadow",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 46,
+      "code": "U58KJW"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 10,
+      "numberOnList": 47,
+      "code": "LC3O5L"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 14,
+      "numberOnList": 48,
+      "code": "9OKG18"
+    },
+    {
+      "name": "Sukuna",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":first_place:",
+      "print": 1,
+      "numberOnList": 49,
+      "code": "JH6PXT"
+    },
+    {
+      "name": "Zeta",
+      "anime": "Eminence in Shadow",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 50,
+      "code": "CMXY5N"
+    },
+    {
+      "name": "Choso",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 5,
+      "numberOnList": 51,
+      "code": "X62FOU"
+    },
+    {
+      "name": "Mei Mei",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 52,
+      "code": "NY3Y6W"
+    },
+    {
+      "name": "Monkey D. Luffy",
+      "anime": "One Piece",
+      "rarity": ":first_place:",
+      "print": 2,
+      "numberOnList": 53,
+      "code": "CCLR9Y"
+    },
+    {
+      "name": "Tsunade",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 54,
+      "code": "7DTH7O"
+    },
+    {
+      "name": "Madara Uchiha",
+      "anime": "Naruto",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 55,
+      "code": "07PDHT"
+    },
+    {
+      "name": "Mei Mei",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 56,
+      "code": "LZSOLQ"
+    }
+  ],
+  "prints": {
+    "Broly": {
+      "common": 10,
+      "unique": 1,
+      "rare": 2,
+      "legendary": 1
+    },
+    "Satan": {
+      "common": 11,
+      "rare": 1
+    },
+    "Monkey D. Luffy": {
+      "common": 6,
+      "unique": 1,
+      "rare": 2,
+      "legendary": 3
+    },
+    "Madara Uchiha": {
+      "legendary": 2,
+      "common": 6,
+      "rare": 1
+    },
+    "Suguru Geto": {
+      "common": 10,
+      "legendary": 2,
+      "unique": 3,
+      "rare": 2
+    },
+    "Naruto": {
+      "rare": 3,
+      "common": 5,
+      "legendary": 1
+    },
+    "Itachi Uchiha": {
+      "common": 8,
+      "rare": 2,
+      "unique": 1
+    },
+    "Tsunade": {
+      "common": 5,
+      "rare": 1
+    },
+    "Hinata Hyuga": {
+      "rare": 2,
+      "unique": 1
+    },
+    "Super Buu": {
+      "common": 14
+    },
+    "Satoru Gojo": {
+      "rare": 6,
+      "unique": 1,
+      "common": 3
+    },
+    "Lelouch Lamperouge": {
+      "common": 9,
+      "rare": 3
+    },
+    "Cid Kagenou": {
+      "common": 8
+    },
+    "Escanor": {
+      "common": 6,
+      "rare": 3,
+      "unique": 1
+    },
+    "Mei Mei": {
+      "common": 5,
+      "rare": 4
+    },
+    "Zeta": {
+      "common": 4,
+      "rare": 4
+    },
+    "Choso": {
+      "common": 4,
+      "rare": 5
+    },
+    "Guy": {
+      "common": 5,
+      "rare": 4
+    },
+    "Toji Fushiguro": {
+      "common": 2,
+      "unique": 2,
+      "rare": 2,
+      "legendary": 1
+    },
+    "Gojo & Geto": {
+      "legendary": 1
+    },
+    "Kid Buu": {
+      "legendary": 2
+    },
+    "Sukuna": {
+      "common": 7,
+      "rare": 1,
+      "unique": 1,
+      "legendary": 2
+    },
+    "Yuji Itadori": {
+      "common": 5,
+      "rare": 1
+    },
+    "Lelouch Lamperouge & C.C.": {
+      "common": 6,
+      "legendary": 1
+    }
+  },
+  "600542189570883605": [
+    {
       "name": "Monkey D. Luffy",
       "anime": "One Piece",
       "rarity": ":third_place:",
       "print": 1,
       "numberOnList": 1,
-      "code": "VNL06E"
+      "code": "RIMZSR"
+    },
+    {
+      "name": "Lelouch Lamperouge",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 2,
+      "code": "PMN7YA"
+    },
+    {
+      "name": "Satoru Gojo",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 2,
+      "numberOnList": 3,
+      "code": "XMMNXY"
+    },
+    {
+      "name": "Zeta",
+      "anime": "Eminence in Shadow",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 4,
+      "code": "RXRSI5"
+    },
+    {
+      "name": "Lelouch Lamperouge",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 5,
+      "code": "YJ2T32"
+    },
+    {
+      "name": "Toji Fushiguro",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 6,
+      "code": "74VDMS"
+    },
+    {
+      "name": "Toji Fushiguro",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 7,
+      "code": "LOTQ1U"
+    },
+    {
+      "name": "Zeta",
+      "anime": "Eminence in Shadow",
+      "rarity": ":second_place:",
+      "print": 3,
+      "numberOnList": 8,
+      "code": "FRHRNG"
+    },
+    {
+      "name": "Satoru Gojo",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 9,
+      "code": "K4BAEY"
+    },
+    {
+      "name": "Toji Fushiguro",
+      "anime": "Jujutsu Kaisen",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 1,
+      "numberOnList": 10,
+      "code": "1FMBTH"
+    },
+    {
+      "name": "Cid Kagenou",
+      "anime": "Eminence in Shadow",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 11,
+      "code": "Q3MYZD"
+    },
+    {
+      "name": "Satan",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 6,
+      "numberOnList": 12,
+      "code": "KTUU3Q"
+    },
+    {
+      "name": "Broly",
+      "anime": "Dragon Ball",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 13,
+      "code": "EZ981N"
+    },
+    {
+      "name": "Toji Fushiguro",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 14,
+      "code": "IH3EPX"
+    },
+    {
+      "name": "Choso",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 4,
+      "numberOnList": 15,
+      "code": "SQKLLP"
+    },
+    {
+      "name": "Sukuna",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 7,
+      "numberOnList": 16,
+      "code": "EVD7OM"
+    },
+    {
+      "name": "Itachi Uchiha",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 8,
+      "numberOnList": 17,
+      "code": "SKUOZM"
     }
   ],
-  "prints": {
-    "Monkey D. Luffy": {
-      "common": 1
-    },
-    "Super Buu": {
-      "common": 1
-    }
-  },
   "719559424695468032": [
+    {
+      "name": "Madara Uchiha",
+      "anime": "Naruto",
+      "rarity": ":first_place:",
+      "print": 1,
+      "numberOnList": 1,
+      "code": "9NIXJI"
+    },
+    {
+      "name": "Naruto",
+      "anime": "Naruto",
+      "rarity": ":second_place:",
+      "print": 2,
+      "numberOnList": 2,
+      "code": "BVWIFJ"
+    },
+    {
+      "name": "Tsunade",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 3,
+      "code": "0OBT0Z"
+    },
+    {
+      "name": "Hinata Hyuga",
+      "anime": "Naruto",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 4,
+      "code": "VC18M8"
+    },
     {
       "name": "Super Buu",
       "anime": "Dragon Ball",
       "rarity": ":third_place:",
       "print": 1,
+      "numberOnList": 5,
+      "code": "JHTG7Q"
+    },
+    {
+      "name": "Zeta",
+      "anime": "Eminence in Shadow",
+      "rarity": ":second_place:",
+      "print": 2,
+      "numberOnList": 6,
+      "code": "AZSG7Q"
+    },
+    {
+      "name": "Madara Uchiha",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 7,
+      "code": "T9OTFE"
+    },
+    {
+      "name": "Madara Uchiha",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 8,
+      "code": "F5AUQ8"
+    },
+    {
+      "name": "Mei Mei",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 2,
+      "numberOnList": 9,
+      "code": "XG9NK4"
+    },
+    {
+      "name": "Guy",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 10,
+      "code": "73TRSR"
+    },
+    {
+      "name": "Escanor",
+      "anime": "The Seven Deadly Sins",
+      "rarity": ":second_place:",
+      "print": 2,
+      "numberOnList": 11,
+      "code": "ARM2MC"
+    },
+    {
+      "name": "Guy",
+      "anime": "Naruto",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 12,
+      "code": "7BPKB2"
+    },
+    {
+      "name": "Zeta",
+      "anime": "Eminence in Shadow",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 13,
+      "code": "N5ZK6B"
+    },
+    {
+      "name": "Choso",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 14,
+      "code": "Y9B2TB"
+    },
+    {
+      "name": "Broly",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 15,
+      "code": "0IH1MC"
+    },
+    {
+      "name": "Escanor",
+      "anime": "The Seven Deadly Deadly Sins",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 16,
+      "code": "L46QGJ"
+    },
+    {
+      "name": "Naruto",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 17,
+      "code": "LAKTET"
+    },
+    {
+      "name": "Sukuna",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 18,
+      "code": "PYPKE6"
+    },
+    {
+      "name": "Satoru Gojo",
+      "anime": "Jujutsu Kaisen",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 1,
+      "numberOnList": 19,
+      "code": "GLRKOX"
+    },
+    {
+      "name": "Tsunade",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 20,
+      "code": "8OVO9G"
+    },
+    {
+      "name": "Guy",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 21,
+      "code": "9JNQZV"
+    },
+    {
+      "name": "Cid Kagenou",
+      "anime": "Eminence in Shadow",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 22,
+      "code": "9HA2IR"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 7,
+      "numberOnList": 23,
+      "code": "UJZ4I3"
+    },
+    {
+      "name": "Satoru Gojo",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 24,
+      "code": "9BN6HF"
+    },
+    {
+      "name": "Itachi Uchiha",
+      "anime": "Naruto",
+      "rarity": ":second_place:",
+      "print": 2,
+      "numberOnList": 25,
+      "code": "C3HEEN"
+    },
+    {
+      "name": "Guy",
+      "anime": "Naruto",
+      "rarity": ":second_place:",
+      "print": 2,
+      "numberOnList": 26,
+      "code": "DUKGL2"
+    },
+    {
+      "name": "Choso",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 3,
+      "numberOnList": 27,
+      "code": "JCVGUJ"
+    },
+    {
+      "name": "Broly",
+      "anime": "Dragon Ball",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 1,
+      "numberOnList": 28,
+      "code": "07DZL5"
+    },
+    {
+      "name": "Naruto",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 29,
+      "code": "UKLJFD"
+    },
+    {
+      "name": "Mei Mei",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 4,
+      "numberOnList": 30,
+      "code": "LNOIN8"
+    },
+    {
+      "name": "Lelouch Lamperouge",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 6,
+      "numberOnList": 31,
+      "code": "31DP0N"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 32,
+      "code": "238L12"
+    },
+    {
+      "name": "Zeta",
+      "anime": "Eminence in Shadow",
+      "rarity": ":second_place:",
+      "print": 4,
+      "numberOnList": 33,
+      "code": "H1D4RA"
+    },
+    {
+      "name": "Yuji Itadori",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 34,
+      "code": "GZNRYQ"
+    },
+    {
+      "name": "Broly",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 6,
+      "numberOnList": 35,
+      "code": "OGUIQI"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 6,
+      "numberOnList": 36,
+      "code": "ZNNFXL"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 8,
+      "numberOnList": 37,
+      "code": "QVYPGZ"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":first_place:",
+      "print": 2,
+      "numberOnList": 38,
+      "code": "44L45V"
+    },
+    {
+      "name": "Tsunade",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 39,
+      "code": "1LAKIT"
+    },
+    {
+      "name": "Cid Kagenou",
+      "anime": "Eminence in Shadow",
+      "rarity": ":third_place:",
+      "print": 6,
+      "numberOnList": 40,
+      "code": "0HZ0T7"
+    },
+    {
+      "name": "Monkey D. Luffy",
+      "anime": "One Piece",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 41,
+      "code": "DEP18B"
+    },
+    {
+      "name": "Mei Mei",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 42,
+      "code": "CMX4D3"
+    },
+    {
+      "name": "Broly",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 7,
+      "numberOnList": 43,
+      "code": "7OSYMK"
+    },
+    {
+      "name": "Kid Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":first_place:",
+      "print": 2,
+      "numberOnList": 44,
+      "code": "XUQ88G"
+    },
+    {
+      "name": "Lelouch Lamperouge",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 7,
+      "numberOnList": 45,
+      "code": "SZCACX"
+    },
+    {
+      "name": "Sukuna",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 46,
+      "code": "AR2N0K"
+    },
+    {
+      "name": "Escanor",
+      "anime": "The Seven Deadly Deadly Sins",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 47,
+      "code": "XTI0QR"
+    },
+    {
+      "name": "Broly",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 8,
+      "numberOnList": 48,
+      "code": "4R4WF1"
+    },
+    {
+      "name": "Escanor",
+      "anime": "The Seven Deadly Sins",
+      "rarity": ":second_place:",
+      "print": 3,
+      "numberOnList": 49,
+      "code": "0SWXZV"
+    },
+    {
+      "name": "Lelouch Lamperouge & C.C.",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 50,
+      "code": "WUSDIU"
+    },
+    {
+      "name": "Madara Uchiha",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 51,
+      "code": "2OJ6XC"
+    },
+    {
+      "name": "Itachi Uchiha",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 52,
+      "code": "QNM0BO"
+    },
+    {
+      "name": "Lelouch Lamperouge",
+      "anime": "Code Geass",
+      "rarity": ":second_place:",
+      "print": 2,
+      "numberOnList": 53,
+      "code": "JK25BL"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 9,
+      "numberOnList": 54,
+      "code": "KXMN6A"
+    },
+    {
+      "name": "Itachi Uchiha",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 6,
+      "numberOnList": 55,
+      "code": "BZ7Q8H"
+    },
+    {
+      "name": "Satoru Gojo",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 56,
+      "code": "0K3V3Q"
+    },
+    {
+      "name": "Broly",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 10,
+      "numberOnList": 57,
+      "code": "RW0OMO"
+    },
+    {
+      "name": "Tsunade",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 58,
+      "code": "8CGRLY"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 13,
+      "numberOnList": 59,
+      "code": "BM8XEB"
+    },
+    {
+      "name": "Choso",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 60,
+      "code": "2Q9YJB"
+    },
+    {
+      "name": "Yuji Itadori",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 61,
+      "code": "G1OX8M"
+    },
+    {
+      "name": "Madara Uchiha",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 62,
+      "code": "N5J5E8"
+    },
+    {
+      "name": "Cid Kagenou",
+      "anime": "Eminence in Shadow",
+      "rarity": ":third_place:",
+      "print": 8,
+      "numberOnList": 63,
+      "code": "H933JI"
+    },
+    {
+      "name": "Broly",
+      "anime": "Dragon Ball",
+      "rarity": ":first_place:",
+      "print": 1,
+      "numberOnList": 64,
+      "code": "92USCL"
+    },
+    {
+      "name": "Escanor",
+      "anime": "The Seven Deadly Deadly Sins",
+      "rarity": ":third_place:",
+      "print": 6,
+      "numberOnList": 65,
+      "code": "640V8M"
+    },
+    {
+      "name": "Madara Uchiha",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 66,
+      "code": "DYG5QB"
+    },
+    {
+      "name": "Hinata Hyuga",
+      "anime": "Naruto",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 1,
+      "numberOnList": 67,
+      "code": "D61I4G"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 2,
+      "numberOnList": 68,
+      "code": "3HE1YM"
+    },
+    {
+      "name": "Lelouch Lamperouge",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 9,
+      "numberOnList": 69,
+      "code": "Z56D62"
+    },
+    {
+      "name": "Broly",
+      "anime": "Dragon Ball",
+      "rarity": ":second_place:",
+      "print": 2,
+      "numberOnList": 70,
+      "code": "G59ENG"
+    },
+    {
+      "name": "Satan",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 11,
+      "numberOnList": 71,
+      "code": "C7JWZB"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 3,
+      "numberOnList": 72,
+      "code": "8ZC4QT"
+    },
+    {
+      "name": "Lelouch Lamperouge",
+      "anime": "Code Geass",
+      "rarity": ":second_place:",
+      "print": 3,
+      "numberOnList": 73,
+      "code": "0IDK9E"
+    },
+    {
+      "name": "Yuji Itadori",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 74,
+      "code": "MQATFY"
+    }
+  ],
+  "984234910111916103": [
+    {
+      "name": "Naruto",
+      "anime": "Naruto",
+      "rarity": ":second_place:",
+      "print": 1,
       "numberOnList": 1,
-      "code": "FI277M"
+      "code": "NJKMTD"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 2,
+      "code": "RLY0WI"
+    }
+  ],
+  "739268550321242142": [
+    {
+      "name": "Lelouch Lamperouge",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 1,
+      "code": "JXFJB1"
+    },
+    {
+      "name": "Lelouch Lamperouge",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 2,
+      "code": "0MDUH6"
+    },
+    {
+      "name": "Cid Kagenou",
+      "anime": "Eminence in Shadow",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 3,
+      "code": "36A1LY"
+    },
+    {
+      "name": "Escanor",
+      "anime": "The Seven Deadly Deadly Sins",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 4,
+      "code": "50H7IW"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 5,
+      "code": "CV4K4J"
+    },
+    {
+      "name": "Monkey D. Luffy",
+      "anime": "One Piece",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 1,
+      "numberOnList": 6,
+      "code": "64QYKV"
+    },
+    {
+      "name": "Guy",
+      "anime": "Naruto",
+      "rarity": ":second_place:",
+      "print": 3,
+      "numberOnList": 7,
+      "code": "EP0RSE"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 7,
+      "numberOnList": 8,
+      "code": "89QR9P"
+    },
+    {
+      "name": "Yuji Itadori",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 9,
+      "code": "6ZPM9T"
+    },
+    {
+      "name": "Lelouch Lamperouge & C.C.",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 10,
+      "code": "92DMTE"
+    },
+    {
+      "name": "Sukuna",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 11,
+      "code": "WKCCUX"
+    },
+    {
+      "name": "Satoru Gojo",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 4,
+      "numberOnList": 12,
+      "code": "EHPVMF"
+    },
+    {
+      "name": "Sukuna",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 13,
+      "code": "SSAZ7U"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 9,
+      "numberOnList": 14,
+      "code": "F54MPP"
+    },
+    {
+      "name": "Satoru Gojo",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 5,
+      "numberOnList": 15,
+      "code": "LZAND8"
+    },
+    {
+      "name": "Satoru Gojo",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 6,
+      "numberOnList": 16,
+      "code": "AELP7C"
+    },
+    {
+      "name": "Toji Fushiguro",
+      "anime": "Jujutsu Kaisen",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 2,
+      "numberOnList": 17,
+      "code": "LRNDXB"
+    },
+    {
+      "name": "Sukuna",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 6,
+      "numberOnList": 18,
+      "code": "EEN3OQ"
+    },
+    {
+      "name": "Lelouch Lamperouge & C.C.",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 19,
+      "code": "4W6QE1"
+    },
+    {
+      "name": "Escanor",
+      "anime": "The Seven Deadly Deadly Sins",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 20,
+      "code": "8EQ96D"
+    },
+    {
+      "name": "Satan",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 8,
+      "numberOnList": 21,
+      "code": "17RR0I"
+    },
+    {
+      "name": "Broly",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 9,
+      "numberOnList": 22,
+      "code": "M743UL"
+    },
+    {
+      "name": "Sukuna",
+      "anime": "Jujutsu Kaisen",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 1,
+      "numberOnList": 23,
+      "code": "6X6VG5"
+    },
+    {
+      "name": "Itachi Uchiha",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 24,
+      "code": "J8RDUC"
+    },
+    {
+      "name": "Naruto",
+      "anime": "Naruto",
+      "rarity": ":second_place:",
+      "print": 3,
+      "numberOnList": 25,
+      "code": "O5ZNRY"
+    },
+    {
+      "name": "Hinata Hyuga",
+      "anime": "Naruto",
+      "rarity": ":second_place:",
+      "print": 2,
+      "numberOnList": 26,
+      "code": "OI9F1R"
+    },
+    {
+      "name": "Monkey D. Luffy",
+      "anime": "One Piece",
+      "rarity": ":third_place:",
+      "print": 6,
+      "numberOnList": 27,
+      "code": "DNQNNR"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 12,
+      "numberOnList": 28,
+      "code": "604T4K"
+    },
+    {
+      "name": "Yuji Itadori",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 29,
+      "code": "372JD8"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 2,
+      "numberOnList": 30,
+      "code": "XIAZLL"
+    },
+    {
+      "name": "Monkey D. Luffy",
+      "anime": "One Piece",
+      "rarity": ":second_place:",
+      "print": 2,
+      "numberOnList": 31,
+      "code": "6BBX1J"
+    },
+    {
+      "name": "Satan",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 9,
+      "numberOnList": 32,
+      "code": "W7EV8G"
+    },
+    {
+      "name": "Lelouch Lamperouge & C.C.",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 33,
+      "code": "Q7DZ7A"
+    },
+    {
+      "name": "Satan",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 10,
+      "numberOnList": 34,
+      "code": "B72WVC"
+    },
+    {
+      "name": "Lelouch Lamperouge & C.C.",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 35,
+      "code": "A8350A"
+    },
+    {
+      "name": "Naruto",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 36,
+      "code": "BB8FK6"
+    },
+    {
+      "name": "Cid Kagenou",
+      "anime": "Eminence in Shadow",
+      "rarity": ":third_place:",
+      "print": 7,
+      "numberOnList": 37,
+      "code": "QBY3UP"
+    },
+    {
+      "name": "Toji Fushiguro",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":first_place:",
+      "print": 1,
+      "numberOnList": 38,
+      "code": "RI7CN0"
+    },
+    {
+      "name": "Lelouch Lamperouge & C.C.",
+      "anime": "Code Geass",
+      "rarity": ":first_place:",
+      "print": 1,
+      "numberOnList": 39,
+      "code": "6ETMEQ"
+    },
+    {
+      "name": "Toji Fushiguro",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 2,
+      "numberOnList": 40,
+      "code": "4KTGH3"
+    },
+    {
+      "name": "Naruto",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 41,
+      "code": "8YNN5U"
+    },
+    {
+      "name": "Sukuna",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":first_place:",
+      "print": 2,
+      "numberOnList": 42,
+      "code": "11F2S8"
+    },
+    {
+      "name": "Itachi Uchiha",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 7,
+      "numberOnList": 43,
+      "code": "I7RNOF"
+    },
+    {
+      "name": "Monkey D. Luffy",
+      "anime": "One Piece",
+      "rarity": ":first_place:",
+      "print": 1,
+      "numberOnList": 44,
+      "code": "KBUMQ2"
+    },
+    {
+      "name": "Monkey D. Luffy",
+      "anime": "One Piece",
+      "rarity": ":first_place:",
+      "print": 3,
+      "numberOnList": 45,
+      "code": "6OOCP9"
+    },
+    {
+      "name": "Yuji Itadori",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 46,
+      "code": "UXKYN4"
+    },
+    {
+      "name": "Lelouch Lamperouge & C.C.",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 6,
+      "numberOnList": 47,
+      "code": "TY9S3Q"
+    },
+    {
+      "name": "Madara Uchiha",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 6,
+      "numberOnList": 48,
+      "code": "05KOKM"
+    },
+    {
+      "name": "Mei Mei",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 49,
+      "code": "PPGWPN"
+    }
+  ],
+  "1139212382397276322": [
+    {
+      "name": "Mei Mei",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 1,
+      "code": "TLK96L"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 2,
+      "code": "P7PMJ9"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 1,
+      "numberOnList": 3,
+      "code": "Z2VMCQ"
+    },
+    {
+      "name": "Broly",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 4,
+      "code": "QF4RSR"
+    },
+    {
+      "name": "Guy",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 5,
+      "code": "KP74E9"
+    },
+    {
+      "name": "Monkey D. Luffy",
+      "anime": "One Piece",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 6,
+      "code": "1YTL3Z"
+    },
+    {
+      "name": "Satan",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 7,
+      "code": "9Y70Y3"
+    },
+    {
+      "name": "Satan",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 5,
+      "numberOnList": 8,
+      "code": "0GIX97"
+    },
+    {
+      "name": "Gojo & Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":first_place:",
+      "print": 1,
+      "numberOnList": 9,
+      "code": "6BI422"
+    },
+    {
+      "name": "Escanor",
+      "anime": "The Seven Deadly Sins",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 10,
+      "code": "X7ZWU5"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 6,
+      "numberOnList": 11,
+      "code": "3Z7Q2A"
+    },
+    {
+      "name": "Itachi Uchiha",
+      "anime": "Naruto",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 12,
+      "code": "9Q2MO4"
+    },
+    {
+      "name": "Monkey D. Luffy",
+      "anime": "One Piece",
+      "rarity": ":third_place:",
+      "print": 4,
+      "numberOnList": 13,
+      "code": "R7KQU9"
+    },
+    {
+      "name": "Kid Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":first_place:",
+      "print": 1,
+      "numberOnList": 14,
+      "code": "YKU5LF"
+    }
+  ],
+  "1206658009669959784": [
+    {
+      "name": "Mei Mei",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 1,
+      "code": "WBCSZV"
+    },
+    {
+      "name": "Naruto",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 2,
+      "code": "ZS0JXC"
+    },
+    {
+      "name": "Monkey D. Luffy",
+      "anime": "One Piece",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 3,
+      "code": "3OCY8K"
+    }
+  ],
+  "1153689831826800640": [
+    {
+      "name": "Itachi Uchiha",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 1,
+      "code": "0T4BJ3"
     }
   ]
 }

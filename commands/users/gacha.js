@@ -1,7 +1,8 @@
 const { createCanvas, loadImage, registerFont } = require("canvas");
 const fs = require("fs");
 const path = require("path");
-const { EmbedBuilder } = require("discord.js");
+const { EmbedBuilder, Guild } = require("discord.js");
+
 
 // Register custom fonts
 registerFont(
@@ -430,6 +431,7 @@ module.exports = {
 
             // Save the updated data
             saveData(data);
+            console.log(`\x1b[31m${message.author.username}\x1b[0m - \x1b[32m(${selectedImageAndFrame.characterName} || ${selectedImageAndFrame.animeName})\x1b[0m - \x1b[32m${printNumber}\x1b[0m - \x1b[32m${selectedImageAndFrame.rarity}\x1b[0m - \x1b[35m${message.guild.name}\x1b[0m`);
 
             // Create an embed with card details
             const cardEmbed = new EmbedBuilder()
@@ -591,6 +593,7 @@ module.exports = {
 
             // Save the updated data
             saveData(data);
+            console.log(`\x1b[31m${message.author.username}\x1b[0m - \x1b[32m(${selectedImageAndFrame.characterName} || ${selectedImageAndFrame.animeName})\x1b[0m - \x1b[32m${printNumber}\x1b[0m - \x1b[32m${selectedImageAndFrame.rarity}\x1b[0m - \x1b[35m${message.guild.name}\x1b[0m`);
 
             // Get current time
             const now = Date.now();
