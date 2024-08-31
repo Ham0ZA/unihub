@@ -983,6 +983,38 @@
       "print": 3,
       "numberOnList": 123,
       "code": "H9GOF8"
+    },
+    {
+      "name": "Madara Uchiha",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 21,
+      "numberOnList": 124,
+      "code": "009UZB"
+    },
+    {
+      "name": "Zeta",
+      "anime": "Eminence in Shadow",
+      "rarity": ":third_place:",
+      "print": 21,
+      "numberOnList": 125,
+      "code": "HP4ZV1"
+    },
+    {
+      "name": "Toji Fushiguro",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 11,
+      "numberOnList": 126,
+      "code": "N80K9B"
+    },
+    {
+      "name": "Mei Mei",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 19,
+      "numberOnList": 127,
+      "code": "ELX0JN"
     }
   ],
   "prints": {
@@ -1004,7 +1036,7 @@
     },
     "Madara Uchiha": {
       "legendary": 3,
-      "common": 20,
+      "common": 21,
       "rare": 10,
       "unique": 1
     },
@@ -1063,13 +1095,13 @@
       "legendary": 1
     },
     "Mei Mei": {
-      "common": 18,
+      "common": 19,
       "rare": 4,
       "legendary": 1,
       "unique": 1
     },
     "Zeta": {
-      "common": 20,
+      "common": 21,
       "rare": 8
     },
     "Choso": {
@@ -1083,7 +1115,7 @@
       "legendary": 2
     },
     "Toji Fushiguro": {
-      "common": 10,
+      "common": 11,
       "unique": 3,
       "rare": 7,
       "legendary": 2

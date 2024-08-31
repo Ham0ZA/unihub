@@ -120,9 +120,9 @@ client.on("messageCreate", async (message) => {
         )
             return false;
         
-        if (message.author.id === "600542189570883605" === "719559424695468032" === "885688062636613643" === "682022283048386560") {
+        /* if (message.author.id === "600542189570883605" === "719559424695468032" === "885688062636613643" === "682022283048386560") {
             return message.reply('sir t9wd')
-        }
+        } */
 
         // Check if the bot was mentioned
         if (message.content.startsWith('<@' + client.user.id + '>')) {
