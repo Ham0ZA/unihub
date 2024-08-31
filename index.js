@@ -120,9 +120,9 @@ client.on("messageCreate", async (message) => {
         )
             return false;
         
-        /* if (message.author.id === "600542189570883605" ) {
+        if (message.author.id === "600542189570883605" === "719559424695468032" === "885688062636613643" === "682022283048386560") {
             return message.reply('sir t9wd')
-        } */
+        }
 
         // Check if the bot was mentioned
         if (message.content.startsWith('<@' + client.user.id + '>')) {
@@ -160,7 +160,7 @@ client.on("messageCreate", async (message) => {
             if (now < expirationTime) {
                 const timeLeft = (expirationTime - now) / 1000;
                 return message.reply(
-                    `please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${commandName}\` command.`,
+                    `please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`,
                 );
             }
         }

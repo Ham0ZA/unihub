@@ -13,7 +13,7 @@ module.exports = {
                 .setTitle('Command List')
                 .setColor('#0099ff')
                 .setDescription('Here are all the available commands:')
-                .setFooter({ text: 'Use .help [command name] for detailed information.' })
+                .setFooter({ text: 'Bot made by: goldenbroly | Use .help [command name] for detailed information.' })
 
                 // Sorting command categories alphabetically
                 const sortedCategories = Array.from(commandCategories.keys()).sort();

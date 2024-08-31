@@ -11,7 +11,7 @@ module.exports = {
         const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
         const seconds = Math.floor(totalSeconds % 60);
 
-        const souf = "600542189570883605"
+        const souf = message.author.id === "600542189570883605";
         
         if (message.author.id !== ownerId && souf) {
             return message.reply('Command only for bot Owner.');

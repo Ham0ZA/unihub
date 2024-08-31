@@ -1,0 +1,53 @@
+{
+  "cards": [
+    {
+      "name": "Satoru Gojo",
+      "wishlistCount": 1
+    },
+    {
+      "name": "Guy",
+      "wishlistCount": 1
+    },
+    {
+      "name": "Itachi Uchiha",
+      "wishlistCount": 1
+    },
+    {
+      "name": "Cid Kagenou",
+      "wishlistCount": 1
+    },
+    {
+      "name": "Toji Fushiguro",
+      "wishlistCount": 2
+    },
+    {
+      "name": "Suguru Geto",
+      "wishlistCount": 1
+    },
+    {
+      "name": "Gojo & Geto",
+      "wishlistCount": 1
+    },
+    {
+      "name": "Zoro",
+      "wishlistCount": 1
+    }
+  ],
+  "users": {
+    "944919875674071060": [
+      "Guy",
+      "Itachi Uchiha",
+      "Cid Kagenou",
+      "Toji Fushiguro",
+      "Suguru Geto",
+      "Gojo & Geto",
+      "Zoro"
+    ],
+    "719559424695468032": [
+      "Toji Fushiguro"
+    ],
+    "1132665775405150238": [
+      "Satoru Gojo"
+    ]
+  }
+}

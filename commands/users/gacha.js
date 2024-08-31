@@ -47,10 +47,10 @@ const rarityEmojis = {
 
 // Probability distribution for rarities
 const rarityChances = {
-    common: 60,
+    common: 5,
     rare: 25,
     legendary: 10,
-    unique: 5,
+    unique: 60,
 };
 
 // Ensure directories and files exist

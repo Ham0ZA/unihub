@@ -5,14 +5,32 @@ const prefix = require('./../../index.js');
 
 // Paths for card data and images
 const cardDataPath = path.join(__dirname, '..', '..', 'data', 'cards.json');
+const wishlistPath = path.join(__dirname, '..', '..', 'data', 'wishlist.json');
 const imagesFolderPath = path.join(__dirname, '..', '..', 'images');
 
 // Load card data from JSON
 const loadCardData = () => {
     if (!fs.existsSync(cardDataPath)) {
-        return {};
+        return { cards: [] };
     }
     return JSON.parse(fs.readFileSync(cardDataPath));
+};
+
+// Load wishlist data from JSON
+const loadWishlistData = () => {
+    if (!fs.existsSync(wishlistPath)) {
+        return { cards: [], users: {} };
+    }
+    return JSON.parse(fs.readFileSync(wishlistPath));
+};
+
+// Save wishlist data to JSON
+const saveWishlistData = (data) => {
+    try {
+        fs.writeFileSync(wishlistPath, JSON.stringify(data, null, 2));
+    } catch (err) {
+        console.error('Error saving wishlist data:', err);
+    }
 };
 
 // Find all cards by name (ignores case) across all folders
@@ -85,6 +103,10 @@ module.exports = {
                     .setLabel('⬅️')
                     .setStyle(ButtonStyle.Primary),
                 new ButtonBuilder()
+                .setCustomId('wishlist')
+                .setLabel('💫')
+                .setStyle(ButtonStyle.Success),
+                new ButtonBuilder()
                     .setCustomId('right')
                     .setLabel('➡️')
                     .setStyle(ButtonStyle.Primary)
@@ -98,15 +120,51 @@ module.exports = {
             components: [row]
         });
 
-        const filter = (interaction) => ['left', 'right'].includes(interaction.customId) && interaction.user.id === message.author.id;
+        const filter = (interaction) => ['left', 'right', 'wishlist'].includes(interaction.customId) && interaction.user.id === message.author.id;
 
         const collector = messageEmbed.createMessageComponentCollector({ filter, time: 60000 });
 
         collector.on('collect', async (interaction) => {
+            if (interaction.user.id !== message.author.id) {
+                // Inform the user they are not authorized to use these buttons
+                await interaction.reply({ content: 'You are not authorized to interact with these buttons.', ephemeral: true });
+                return;
+            }
+
             if (interaction.customId === 'left') {
                 currentIndex = (currentIndex - 1 + cardImages.length) % cardImages.length;
             } else if (interaction.customId === 'right') {
                 currentIndex = (currentIndex + 1) % cardImages.length;
+            } else if (interaction.customId === 'wishlist') {
+                // Add card to wishlist
+                const cardName = cardImages[currentIndex].cardName;
+                const userId = interaction.user.id;
+                const wishlistData = loadWishlistData();
+                const userWishlist = wishlistData.users[userId] || [];
+                const cardIndex = userWishlist.indexOf(cardName);
+                
+                if (userWishlist.length >= 10) {
+                    await interaction.reply({ content: 'You have reached the limit of 10 wishlisted cards.', ephemeral: true });
+                } else if (cardIndex === -1) {
+                    userWishlist.push(cardName);
+                    wishlistData.users[userId] = userWishlist;
+
+                    // Update global wishlist count
+                    const cardData = wishlistData.cards.find(card => card.name === cardName);
+                    if (cardData) {
+                        cardData.wishlistCount += 1;
+                    } else {
+                        wishlistData.cards.push({ name: cardName, wishlistCount: 1 });
+                    }
+
+                    saveWishlistData(wishlistData);
+
+                    await interaction.reply({ content: `Added **${cardName}** to your wishlist.`, ephemeral: true });
+                } else {
+                    await interaction.reply({ content: 'Card already added to your wishlist.', ephemeral: true });
+                }
+                
+                return; // Ensure that no further updates are attempted after this reply
             }
 
             const updatedEmbed = generateEmbed(currentIndex);
