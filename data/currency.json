@@ -1,17 +1,17 @@
 {
   "944919875674071060": {
-    "ndballs": 499,
+    "ndballs": 584,
     "ddballs": 72,
     "items": {
       "Booster Pack": 1,
-      "Egacha": 91347
+      "Egacha": 91331
     }
   },
   "719559424695468032": {
     "ndballs": 207,
     "ddballs": 38,
     "items": {
-      "Egacha": 357,
+      "Egacha": 352,
       "Booster Pack": 1
     }
   },
@@ -47,7 +47,7 @@
     "ndballs": 282,
     "ddballs": 0,
     "items": {
-      "Egacha": 181
+      "Egacha": 180
     }
   },
   "424663638087958530": {
@@ -103,7 +103,7 @@
     "ndballs": 90,
     "ddballs": 0,
     "items": {
-      "Egacha": 13
+      "Egacha": 7
     }
   }
 }
