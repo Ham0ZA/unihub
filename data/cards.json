@@ -1199,24 +1199,192 @@
       "print": 8,
       "numberOnList": 150,
       "code": "7SKW3O"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 28,
+      "numberOnList": 151,
+      "code": "RKJE2U"
+    },
+    {
+      "name": "Naruto",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 19,
+      "numberOnList": 152,
+      "code": "3S9VH6"
+    },
+    {
+      "name": "Broly",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 24,
+      "numberOnList": 153,
+      "code": "XDIP7P"
+    },
+    {
+      "name": "Guy",
+      "anime": "Naruto",
+      "rarity": ":first_place:",
+      "print": 3,
+      "numberOnList": 154,
+      "code": "WOXZ99"
+    },
+    {
+      "name": "Itachi Uchiha",
+      "anime": "Naruto",
+      "rarity": ":second_place:",
+      "print": 11,
+      "numberOnList": 155,
+      "code": "EMAMJX"
+    },
+    {
+      "name": "Mei Mei",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 21,
+      "numberOnList": 156,
+      "code": "FFM7QM"
+    },
+    {
+      "name": "Satoru Gojo",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 16,
+      "numberOnList": 157,
+      "code": "U5B2MX"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":second_place:",
+      "print": 12,
+      "numberOnList": 158,
+      "code": "7ZFYIY"
+    },
+    {
+      "name": "Lelouch Lamperouge & C.C.",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 21,
+      "numberOnList": 159,
+      "code": "7QCG13"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 29,
+      "numberOnList": 160,
+      "code": "0MYNFV"
+    },
+    {
+      "name": "Monkey D. Luffy",
+      "anime": "One Piece",
+      "rarity": ":first_place:",
+      "print": 4,
+      "numberOnList": 161,
+      "code": "HJ023Q"
+    },
+    {
+      "name": "Zoro",
+      "anime": "One Piece",
+      "rarity": ":third_place:",
+      "print": 10,
+      "numberOnList": 162,
+      "code": "WPRMY7"
+    },
+    {
+      "name": "Broly",
+      "anime": "Dragon Ball",
+      "rarity": ":second_place:",
+      "print": 7,
+      "numberOnList": 163,
+      "code": "PCQU19"
+    },
+    {
+      "name": "Lelouch Lamperouge & C.C.",
+      "anime": "Code Geass",
+      "rarity": ":first_place:",
+      "print": 3,
+      "numberOnList": 164,
+      "code": "BWN9U2"
+    },
+    {
+      "name": "Zoro",
+      "anime": "One Piece",
+      "rarity": ":third_place:",
+      "print": 11,
+      "numberOnList": 165,
+      "code": "6B3936"
+    },
+    {
+      "name": "Yuno",
+      "anime": "Black Clover",
+      "rarity": ":first_place:",
+      "print": 1,
+      "numberOnList": 166,
+      "code": "TIENAH"
+    },
+    {
+      "name": "Satoru Gojo",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 12,
+      "numberOnList": 167,
+      "code": "EYVPX8"
+    },
+    {
+      "name": "Zoro",
+      "anime": "One Piece",
+      "rarity": ":first_place:",
+      "print": 3,
+      "numberOnList": 168,
+      "code": "KT1PQI"
+    },
+    {
+      "name": "Toji Fushiguro",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 9,
+      "numberOnList": 169,
+      "code": "E1NEJ4"
+    },
+    {
+      "name": "Yuji Itadori",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 19,
+      "numberOnList": 170,
+      "code": "4UMZ1P"
+    },
+    {
+      "name": "Super Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 30,
+      "numberOnList": 171,
+      "code": "JUZ1AO"
     }
   ],
   "prints": {
     "Broly": {
-      "common": 23,
+      "common": 24,
       "unique": 3,
-      "rare": 6,
+      "rare": 7,
       "legendary": 5
     },
     "Satan": {
-      "common": 31,
+      "common": 33,
       "rare": 6
     },
     "Monkey D. Luffy": {
-      "common": 21,
+      "common": 23,
       "unique": 3,
       "rare": 10,
-      "legendary": 3
+      "legendary": 4
     },
     "Madara Uchiha": {
       "legendary": 3,
@@ -1227,23 +1395,23 @@
     "Suguru Geto": {
       "common": 31,
       "legendary": 3,
-      "unique": 3,
+      "unique": 4,
       "rare": 4
     },
     "Naruto": {
       "rare": 9,
-      "common": 18,
+      "common": 19,
       "legendary": 4,
       "unique": 2
     },
     "Itachi Uchiha": {
       "common": 18,
-      "rare": 10,
+      "rare": 11,
       "unique": 2,
       "legendary": 3
     },
     "Tsunade": {
-      "common": 21,
+      "common": 22,
       "rare": 8,
       "legendary": 3
     },
@@ -1253,14 +1421,14 @@
       "legendary": 1
     },
     "Super Buu": {
-      "common": 27,
-      "rare": 11
+      "common": 30,
+      "rare": 12
     },
     "Satoru Gojo": {
-      "rare": 11,
+      "rare": 12,
       "unique": 3,
-      "common": 14,
-      "legendary": 2
+      "common": 16,
+      "legendary": 3
     },
     "Lelouch Lamperouge": {
       "common": 16,
@@ -1279,13 +1447,13 @@
       "legendary": 1
     },
     "Mei Mei": {
-      "common": 20,
+      "common": 21,
       "rare": 4,
       "legendary": 1,
       "unique": 1
     },
     "Zeta": {
-      "common": 22,
+      "common": 23,
       "rare": 9
     },
     "Choso": {
@@ -1294,14 +1462,14 @@
       "legendary": 2
     },
     "Guy": {
-      "common": 23,
+      "common": 24,
       "rare": 9,
-      "legendary": 2
+      "legendary": 3
     },
     "Toji Fushiguro": {
-      "common": 11,
+      "common": 12,
       "unique": 3,
-      "rare": 8,
+      "rare": 9,
       "legendary": 2
     },
     "Gojo & Geto": {
@@ -1309,7 +1477,7 @@
       "unique": 3
     },
     "Kid Buu": {
-      "legendary": 5
+      "legendary": 6
     },
     "Sukuna": {
       "common": 22,
@@ -1318,26 +1486,32 @@
       "legendary": 6
     },
     "Yuji Itadori": {
-      "common": 18,
+      "common": 20,
       "rare": 8,
       "legendary": 2
     },
     "Lelouch Lamperouge & C.C.": {
-      "common": 19,
-      "legendary": 2
+      "common": 21,
+      "legendary": 3
     },
     "Naruto & Hinata": {
       "rare": 3
     },
     "Zoro": {
-      "common": 9,
-      "legendary": 2,
+      "common": 11,
+      "legendary": 3,
       "unique": 2,
       "rare": 1
     },
     "Luffy & Zoro": {
       "rare": 2,
       "legendary": 2
+    },
+    "Asta": {
+      "rare": 1
+    },
+    "Yuno": {
+      "legendary": 1
     }
   },
   "600542189570883605": [
@@ -1884,6 +2058,14 @@
       "print": 2,
       "numberOnList": 68,
       "code": "27HA9X"
+    },
+    {
+      "name": "Satan",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 32,
+      "numberOnList": 69,
+      "code": "QY3SUP"
     }
   ],
   "719559424695468032": [
@@ -3734,6 +3916,22 @@
       "print": 9,
       "numberOnList": 231,
       "code": "2VIHFI"
+    },
+    {
+      "name": "Tsunade",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 22,
+      "numberOnList": 232,
+      "code": "6NNYH7"
+    },
+    {
+      "name": "Toji Fushiguro",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 12,
+      "numberOnList": 233,
+      "code": "WU2Z7I"
     }
   ],
   "984234910111916103": [
@@ -3776,6 +3974,14 @@
       "print": 1,
       "numberOnList": 5,
       "code": "WUBP6L"
+    },
+    {
+      "name": "Asta",
+      "anime": "Black Clover",
+      "rarity": ":second_place:",
+      "print": 1,
+      "numberOnList": 6,
+      "code": "R6823F"
     }
   ],
   "739268550321242142": [
@@ -4424,6 +4630,46 @@
       "print": 3,
       "numberOnList": 1,
       "code": "0T4BJ3"
+    },
+    {
+      "name": "Satoru Gojo",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":first_place:",
+      "print": 3,
+      "numberOnList": 2,
+      "code": "JNUHCD"
+    },
+    {
+      "name": "Kid Buu",
+      "anime": "Dragon Ball",
+      "rarity": ":first_place:",
+      "print": 6,
+      "numberOnList": 3,
+      "code": "LYPYVS"
+    },
+    {
+      "name": "Zeta",
+      "anime": "Eminence in Shadow",
+      "rarity": ":third_place:",
+      "print": 23,
+      "numberOnList": 4,
+      "code": "LLHPXF"
+    },
+    {
+      "name": "Guy",
+      "anime": "Naruto",
+      "rarity": ":third_place:",
+      "print": 24,
+      "numberOnList": 5,
+      "code": "SEXXK6"
+    },
+    {
+      "name": "Monkey D. Luffy",
+      "anime": "One Piece",
+      "rarity": ":third_place:",
+      "print": 22,
+      "numberOnList": 6,
+      "code": "VQCZ0G"
     }
   ],
   "1132665775405150238": [
@@ -5534,6 +5780,22 @@
       "print": 3,
       "numberOnList": 106,
       "code": "ZUS7YV"
+    },
+    {
+      "name": "Satoru Gojo",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 15,
+      "numberOnList": 107,
+      "code": "48KY8F"
+    },
+    {
+      "name": "Yuji Itadori",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":third_place:",
+      "print": 20,
+      "numberOnList": 108,
+      "code": "VUB74D"
     }
   ],
   "276784265226616832": [
@@ -5962,6 +6224,40 @@
       "print": 10,
       "numberOnList": 51,
       "code": "V19CXZ"
+    },
+    {
+      "name": "Monkey D. Luffy",
+      "anime": "One Piece",
+      "rarity": ":third_place:",
+      "print": 23,
+      "numberOnList": 52,
+      "code": "NEJ4PC"
+    },
+    {
+      "name": "Satan",
+      "anime": "Dragon Ball",
+      "rarity": ":third_place:",
+      "print": 33,
+      "numberOnList": 53,
+      "code": "IBJCS5"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 4,
+      "numberOnList": 54,
+      "code": "XW9MT0"
+    }
+  ],
+  "563512904121319425": [
+    {
+      "name": "Lelouch Lamperouge & C.C.",
+      "anime": "Code Geass",
+      "rarity": ":third_place:",
+      "print": 20,
+      "numberOnList": 1,
+      "code": "9ZSIKB"
     }
   ]
 }

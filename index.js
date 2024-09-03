@@ -9,8 +9,12 @@ const path = require("path");
 require("dotenv").config();
 const keepAlive = require("./servers");
 
-const { checkBlockedUser } = require("./middleware");
-const { sendLog } = require("./utils/logging"); // Adjust the path accordingly
+const {
+  checkBlockedUser
+} = require("./middleware");
+const {
+  sendLog
+} = require("./utils/logging"); // Adjust the path accordingly
 
 const client = new Client({
   intents: [
@@ -86,7 +90,10 @@ loadCommands(commandsDir);
 client.once("ready", async () => {
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({
-    activities: [{ name: `over 𝚄𝙽𝙸𝚅𝙴𝚁𝚂𝙴𝟽`, type: ActivityType.Watching }],
+    activities: [{
+      name: `over 𝚄𝙽𝙸𝚅𝙴𝚁𝚂𝙴𝟽`,
+      type: ActivityType.Watching
+    }],
     status: "dnd",
   });
 
@@ -105,17 +112,6 @@ client.once("ready", async () => {
     console.error("Error sending DM to the owner:", error);
   }
 
-  // Check if all commands are working properly
-  client.commands.forEach((command, name) => {
-    try {
-      if (!command.name || !command.execute) {
-        throw new Error(`Command "${name}" is missing a required property.`);
-      }
-      console.log(`Command "${name}" loaded successfully.`);
-    } catch (error) {
-      console.error(`Error loading command "${name}": ${error.message}`);
-    }
-  });
 });
 
 // Event listener for messages

@@ -442,7 +442,6 @@ module.exports = {
           },
           { name: "Code:", value: uniqueCode, inline: true }
         )
-        .setTimestamp();
 
       // Check if user is on cooldown
       if (now - (cooldownData[userId]?.gacha || 0) < GACHA_COOLDOWN) {
@@ -615,7 +614,6 @@ module.exports = {
           },
           { name: "Code:", value: uniqueCode, inline: true }
         )
-        .setTimestamp();
 
       // Send the card as a message with the image attached
       await message.channel.send({
