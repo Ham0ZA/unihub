@@ -59,15 +59,15 @@ module.exports = {
             new ButtonBuilder()
                 .setCustomId('accept')
                 .setLabel('Accept')
-                .setStyle('3'),
+                .setStyle('Success'),
             new ButtonBuilder()
                 .setCustomId('decline')
                 .setLabel('Decline')
-                .setStyle('4'),
+                .setStyle('Danger'),
             new ButtonBuilder()
                 .setCustomId('cancel')
                 .setLabel('Cancel')
-                .setStyle('2')
+                .setStyle('Secondary')
         );
 
         const embed = new EmbedBuilder()
@@ -85,7 +85,7 @@ module.exports = {
         });
 
         const filter = interaction => {
-            if ((interaction.customId === 'cancel' ) && interaction.user.id === message.author.id) {
+            if ((interaction.customId === 'cancel') && interaction.user.id === message.author.id) {
                 return true;
             }
             if ((interaction.customId === 'accept' || interaction.customId === 'decline') && interaction.user.id === mentionedUser.id) {
@@ -100,8 +100,19 @@ module.exports = {
         collector.on('collect', async i => {
             if (i.customId === 'accept') {
                 if (!data[mentionedUser.id]) data[mentionedUser.id] = [];
+
+                // Add the item to the recipient's list
+                item.numberOnList = data[mentionedUser.id].length + 1;
                 data[mentionedUser.id].push(item);
+
+                // Remove the item from the sender's list
                 data[userId] = userItems.filter(i => i.code !== item.code);
+
+                // Adjust the numberOnList for the remaining items in the sender's list
+                data[userId].forEach((card, index) => {
+                    card.numberOnList = index + 1;
+                });
+
                 saveData(data);
                 await i.update({ content: `${mentionedUser} accepted the gift!`, components: [] });
             } else if (i.customId === 'decline') {

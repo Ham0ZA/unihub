@@ -4,14 +4,14 @@
     "ddballs": 72,
     "items": {
       "Booster Pack": 1,
-      "Egacha": 91318
+      "Egacha": 91287
     }
   },
   "719559424695468032": {
-    "ndballs": 207,
+    "ndballs": 292,
     "ddballs": 38,
     "items": {
-      "Egacha": 351,
+      "Egacha": 283,
       "Booster Pack": 1
     }
   },
@@ -30,10 +30,10 @@
     }
   },
   "885688062636613643": {
-    "ndballs": 366,
+    "ndballs": 449,
     "ddballs": 900,
     "items": {
-      "Egacha": 40
+      "Egacha": 28
     }
   },
   "1080943601997066260": {
@@ -100,10 +100,17 @@
     }
   },
   "682022283048386560": {
-    "ndballs": 90,
+    "ndballs": 172,
     "ddballs": 0,
     "items": {
-      "Egacha": 7
+      "Egacha": 77
+    }
+  },
+  "879026311375519784": {
+    "ndballs": 70,
+    "ddballs": 0,
+    "items": {
+      "Egacha": 66
     }
   }
 }

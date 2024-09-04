@@ -49,17 +49,13 @@ module.exports = {
                 }
             }
 
-            if (!input) {
-                // Get the latest item from the user's collection
-                if (Array.isArray(data[message.author.id])) {
-                    item = data[message.author.id][data[message.author.id].length - 1];
-                    ownerId = message.author.id;
-                }
-            }
-            
             if (!item) {
                 return message.channel.send('No item with that code was found.');
             }
+        }
+
+        if (!input) {
+            return message.reply('Please provide a valid item code or number.');
         }
         // Get image path
         const imagePath = path.join(generatedImagesPath, `${item.code}.png`);

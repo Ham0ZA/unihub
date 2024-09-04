@@ -19,7 +19,6 @@ const loadWishlistData = () => {
 const saveWishlistData = (data) => {
     try {
         fs.writeFileSync(wishlistPath, JSON.stringify(data, null, 2));
-        console.log(`Saved wishlist data to ${wishlistPath}`);
     } catch (err) {
         console.error('Error saving wishlist data:', err);
     }

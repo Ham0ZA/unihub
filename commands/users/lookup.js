@@ -200,12 +200,10 @@ module.exports = {
 
           await interaction.reply({
             content: `Added **${cardName}** to your wishlist.`,
-            ephemeral: true,
           });
         } else {
           await interaction.reply({
             content: "Card already added to your wishlist.",
-            ephemeral: true,
           });
         }
 

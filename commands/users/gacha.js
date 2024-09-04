@@ -2,6 +2,7 @@ const { createCanvas, loadImage, registerFont } = require("canvas");
 const fs = require("fs");
 const path = require("path");
 const { EmbedBuilder, Guild } = require("discord.js");
+let isWriting = false;
 
 // Register custom fonts
 registerFont(
@@ -85,17 +86,27 @@ const ensureDirectoriesAndFilesExist = () => {
   }
 };
 
-// Save data function
-const saveData = (data) => {
-  fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
-};
-
-// Load data function
+// Load data from JSON file
 const loadData = () => {
   if (!fs.existsSync(dataPath)) {
     return {};
   }
   return JSON.parse(fs.readFileSync(dataPath));
+};
+
+// Save data to JSON file
+const saveData = (data) => {
+  if (isWriting) {
+    // Wait or retry
+    setTimeout(() => saveData(data), 100);
+    return;
+  }
+
+  isWriting = true;
+  fs.writeFile(dataPath, JSON.stringify(data, null, 2), (err) => {
+    if (err) throw err;
+    isWriting = false;
+  });
 };
 
 // Function to generate a random 6-character code (alphanumeric)
@@ -431,7 +442,7 @@ module.exports = {
         .setDescription(
           `Dropped **${selectedImageAndFrame.characterName}** from\n **${selectedImageAndFrame.animeName}**`
         )
-        .setColor("Random")
+        .setColor(`#8defff`)
         .setImage(`attachment://${uniqueCode}.png`)
         .addFields(
           { name: "Print:", value: `P${printNumber}`, inline: true },
@@ -445,15 +456,11 @@ module.exports = {
 
       // Check if user is on cooldown
       if (now - (cooldownData[userId]?.gacha || 0) < GACHA_COOLDOWN) {
-        // User is on cooldown
         if (currencyData[userId].items.Egacha >= 1) {
         } else {
-          // User is on cooldown and doesn't have a Gacha item
           const timeLeft = GACHA_COOLDOWN - (now - cooldownData[userId].gacha);
         }
       } else {
-        // User is not on cooldown, proceed with normal drop
-        // Save the current time as the last time this command was used
         if (!cooldownData[userId]) cooldownData[userId] = {};
         cooldownData[userId].gacha = now;
         fs.writeFileSync(cooldownPath, JSON.stringify(cooldownData, null, 2));
