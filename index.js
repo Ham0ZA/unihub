@@ -7,7 +7,6 @@ const {
 const fs = require("fs");
 const path = require("path");
 require("dotenv").config();
-const keepAlive = require("./servers");
 
 const {
   checkBlockedUser
@@ -209,5 +208,4 @@ process.on("uncaughtException", (error) => {
 });
 
 // Login to Discord with your app's token
-keepAlive();
 client.login(process.env.TOKEN);
