@@ -30,8 +30,8 @@ module.exports = {
         const fields = Object.keys(shopData.items).map((key) => {
             const item = shopData.items[key];
             return {
-                name: `**${item.name}**`,
-                value: `${item.description}\n**Cost**: ${item.cost} ${item.currency}`,
+                name: `**${item.name}** = ${item.currency}`,
+                value: `${item.cost}`,
                 inline: false
             };
         });

@@ -24,7 +24,7 @@ ignorePorts = false
 [rules.formatter.fileExtensions]
 
 [rules.formatter.fileExtensions.".js"]
-id = "module:nodejs-20/formatter:prettier"
+id = "module:nodejs-20/languageServer:typescript-language-server"
 
 [[ports]]
 localPort = 3000

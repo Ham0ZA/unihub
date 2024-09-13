@@ -2,14 +2,17 @@
   "items": {
     "Drop": {
       "name": "Egacha",
-      "description": "Extra gacha drop.",
       "cost": 1,
       "currency": "<:ddball:1274489152783519754>"
     },
-    "Booster": {
-      "name": "Booster Pack",
-      "description": "A random pack of 2 cards.",
-      "cost": 100,
+    "fstar": {
+      "name": "fstar",
+      "cost": 3500,
+      "currency": "<:ndball:1274489320086048788>"
+    },
+    "half-gacha": {
+      "name": "half gacha",
+      "cost": 1000,
       "currency": "<:ndball:1274489320086048788>"
     }
   }

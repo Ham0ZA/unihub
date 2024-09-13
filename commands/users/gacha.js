@@ -173,7 +173,10 @@ module.exports = {
   name: "gacha",
   aliases: ["g", "drop", "d"],
   description: "Gacha pull command",
-  async execute(message, args) {
+  async execute(message, args, triggeredByUseCommand = true) {
+    if (!triggeredByUseCommand) {
+        return message.reply('requires the use command');
+    }
     const userId = message.author.id;
 
     // Load cooldown data
