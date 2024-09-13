@@ -1,4 +1,9 @@
-const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
+const {
+  EmbedBuilder,
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+} = require("discord.js");
 const fs = require("fs");
 const path = require("path");
 const prefix = require("./../../index.js");
@@ -38,8 +43,8 @@ const saveWishlistData = (data) => {
   }
 };
 
-// Find all cards by name or source (ignores case) across all folders
-const getCardImagesByNameOrSource = (query) => {
+// Find all cards by name (ignores case) across all folders
+const getCardImagesByName = (name) => {
   const folders = ["common", "rare", "legendary", "unique"];
   const results = [];
 
@@ -52,7 +57,7 @@ const getCardImagesByNameOrSource = (query) => {
         const sourceWithExtension = sourceParts.join("_");
         const source = sourceWithExtension.replace(path.extname(file), "");
 
-        if (cardName.toLowerCase().includes(query.toLowerCase()) || source.toLowerCase().includes(query.toLowerCase())) {
+        if (cardName.toLowerCase().includes(name.toLowerCase())) {
           results.push({
             path: path.join(folderPath, file),
             rarity: folder,
@@ -66,115 +71,79 @@ const getCardImagesByNameOrSource = (query) => {
   return results;
 };
 
-// Helper function to create select menu options
-const createSelectMenuOptions = (cards) => {
-  const uniqueCardNames = [...new Set(cards.map(card => card.cardName))];
-  return uniqueCardNames.map((name) => ({
-    label: name,
-    value: name, // Store the card name as the value
-  }));
-};
+module.exports = {
+  name: "lookup",
+  description: "Lookup information about a card by its name",
+  usage: `${prefix}lookup [name]`,
+  async execute(message, args) {
+    const name = args.join(" ");
+    if (!name) {
+      return message.reply("Please provide the name of the card to look up.");
+    }
 
-// Function to handle the dropdown selection
-const handleDropdownSelection = async (interaction, cardImages, data) => {
-  const selectedCardName = interaction.values[0];
-  const selectedCardImages = cardImages.filter(card => card.cardName === selectedCardName);
+    // Load card data and find card info
+    const data = loadCardData();
+    const cardImages = getCardImagesByName(name);
 
-  const currentIndex = 0; // Start with the first rarity for the selected card
-  const updatedEmbed = generateEmbed(selectedCardImages, currentIndex, data);
+    if (cardImages.length === 0) {
+      return message.reply(`No card found with the name "${name}".`);
+    }
 
-  await interaction.update({
-    embeds: [updatedEmbed],
-    files: [{
-      attachment: selectedCardImages[currentIndex].path,
-      name: "cardImage.png"
-    }],
-    components: [createCardButtonsRow()]
-  });
+    let currentIndex = 0;
 
-  return {
-    selectedCardImages,
-    currentIndex,
-  };
-};
+    // Function to generate the embed for a specific card image
+    const generateEmbed = (index) => {
+      const {
+        path: imagePath,
+        rarity,
+        cardName,
+        source
+      } = cardImages[index];
+      const prints = data.prints[cardName]?.[rarity] || 0;
 
-// Function to create the dropdown menu
-const createDropdownMenu = (cardImages) => {
-  return new ActionRowBuilder().addComponents(
-    new StringSelectMenuBuilder()
-      .setCustomId("card_select")
-      .setPlaceholder("Select a card")
-      .addOptions(createSelectMenuOptions(cardImages))
-  );
-};
+      const rarityEmojis = {
+        unique: "<a:uniquee:1274020241214672927>",
+        legendary: ":first_place:",
+        rare: ":second_place:",
+        common: ":third_place:",
+      };
 
-// Function to generate buttons for card embeds
-const createCardButtonsRow = () => {
-  return new ActionRowBuilder().addComponents(
-    new ButtonBuilder()
+      const embed = new EmbedBuilder()
+        .setDescription(
+          `**Name:** ${cardName}\n**Source:** ${source}\n**Rarity:** ${rarityEmojis[rarity]}\n**Drops:** ${prints}\n**Wishlisted:** ${loadWishlistData().cards.find(card => card.name === cardName)?.wishlistCount || 0}\n${index + 1} of ${cardImages.length}`)
+        .setColor("Blue")
+        .setImage("attachment://cardImage.png") // Referencing attached image as cardImage.png
+
+      return embed;
+    };
+
+    const row = new ActionRowBuilder().addComponents(
+      new ButtonBuilder()
       .setCustomId("left")
       .setLabel("⬅️")
       .setStyle(ButtonStyle.Primary),
-    new ButtonBuilder()
+      new ButtonBuilder()
       .setCustomId("wishlist")
       .setLabel("💫")
       .setStyle(ButtonStyle.Success),
-    new ButtonBuilder()
+      new ButtonBuilder()
       .setCustomId("right")
       .setLabel("➡️")
       .setStyle(ButtonStyle.Primary)
-  );
-};
+    );
 
-// Function to generate the embed for a specific card image
-const generateEmbed = (selectedCardImages, currentIndex, data) => {
-  const { path: imagePath, rarity, cardName, source } = selectedCardImages[currentIndex];
-  const prints = data.prints[cardName]?.[rarity] || 0;
-
-  const rarityEmojis = {
-    unique: "<a:uniquee:1274020241214672927>",
-    legendary: ":first_place:",
-    rare: ":second_place:",
-    common: ":third_place:",
-  };
-
-  const embed = new EmbedBuilder()
-    .setDescription(
-      `**Name:** ${cardName}\n**Source:** ${source}\n**Rarity:** ${rarityEmojis[rarity]}\n**Drops:** ${prints}\n**Wishlisted:** ${loadWishlistData().cards.find(card => card.name === cardName)?.wishlistCount || 0}\n${currentIndex + 1} of ${selectedCardImages.length}`)
-    .setColor("Blue")
-    .setImage("attachment://cardImage.png"); // Referencing attached image as cardImage.png
-
-  return embed;
-};
-
-module.exports = {
-  name: "lookup",
-  description: "Lookup information about a card by its name or source",
-  usage: `${prefix}lookup [name]`,
-  async execute(message, args) {
-    const query = args.join(" ");
-    if (!query) {
-      return message.reply("Please provide the name or source of the card to look up.");
-    }
-
-    const data = loadCardData();
-    const cardImages = getCardImagesByNameOrSource(query);
-
-    if (cardImages.length === 0) {
-      return message.reply(`No card found with the name or source "${query}".`);
-    }
-
-    const initialEmbed = new EmbedBuilder()
-    .setColor("Blue")
-    .setDescription(results);
+    const initialEmbed = generateEmbed(currentIndex);
 
     const messageEmbed = await message.channel.send({
       embeds: [initialEmbed],
-      components: [createDropdownMenu(cardImages)]
+      files: [{
+        attachment: cardImages[currentIndex].path,
+        name: "cardImage.png"
+      }, ], // Attach image as 'cardImage.png'
+      components: [row],
     });
 
-    const filter = (interaction) =>
-      (interaction.isSelectMenu() || interaction.isButton()) &&
+    const filter = (interaction) => ["left", "right", "wishlist"].includes(interaction.customId) &&
       interaction.user.id === message.author.id;
 
     const collector = messageEmbed.createMessageComponentCollector({
@@ -182,75 +151,74 @@ module.exports = {
       time: 60000,
     });
 
-    let currentIndex = 0;
-    let selectedCardImages = [];
-
     collector.on("collect", async (interaction) => {
-      if (interaction.isSelectMenu()) {
-        const result = await handleDropdownSelection(interaction, cardImages, data);
-        selectedCardImages = result.selectedCardImages;
-        currentIndex = result.currentIndex;
+      if (interaction.user.id !== message.author.id) {
+        // Inform the user they are not authorized to use these buttons
+        await interaction.reply({
+          content: "You are not authorized to interact with these buttons.",
+          ephemeral: true,
+        });
+        return;
       }
 
-      if (interaction.isButton()) {
-        if (interaction.customId === "left") {
-          currentIndex = (currentIndex - 1 + selectedCardImages.length) % selectedCardImages.length;
-        } else if (interaction.customId === "right") {
-          currentIndex = (currentIndex + 1) % selectedCardImages.length;
-        } else if (interaction.customId === "wishlist") {
-          const cardName = selectedCardImages[currentIndex].cardName;
-          const userId = interaction.user.id;
-          const wishlistData = loadWishlistData();
-          const userWishlist = wishlistData.users[userId] || [];
-          const cardIndex = userWishlist.indexOf(cardName);
+      if (interaction.customId === "left") {
+        currentIndex =
+          (currentIndex - 1 + cardImages.length) % cardImages.length;
+      } else if (interaction.customId === "right") {
+        currentIndex = (currentIndex + 1) % cardImages.length;
+      } else if (interaction.customId === "wishlist") {
+        // Add card to wishlist
+        const cardName = cardImages[currentIndex].cardName;
+        const userId = interaction.user.id;
+        const wishlistData = loadWishlistData();
+        const userWishlist = wishlistData.users[userId] || [];
+        const cardIndex = userWishlist.indexOf(cardName);
 
-          if (userWishlist.length >= 10) {
-            await interaction.reply({
-              content: "You have reached the limit of 10 wishlisted cards.",
-              ephemeral: true,
-            });
-          } else if (cardIndex === -1) {
-            userWishlist.push(cardName);
-            wishlistData.users[userId] = userWishlist;
+        if (userWishlist.length >= 10) {
+          await interaction.reply({
+            content: "You have reached the limit of 10 wishlisted cards.",
+            ephemeral: true,
+          });
+        } else if (cardIndex === -1) {
+          userWishlist.push(cardName);
+          wishlistData.users[userId] = userWishlist;
 
-            const cardData = wishlistData.cards.find(
-              (card) => card.name === cardName
-            );
-            if (cardData) {
-              cardData.wishlistCount += 1;
-            } else {
-              wishlistData.cards.push({
-                name: cardName,
-                wishlistCount: 1
-              });
-            }
-
-            saveWishlistData(wishlistData);
-
-            await interaction.reply({
-              content: `Added **${cardName}** to your wishlist.`,
-              ephemeral: true,
-            });
+          // Update global wishlist count
+          const cardData = wishlistData.cards.find(
+            (card) => card.name === cardName
+          );
+          if (cardData) {
+            cardData.wishlistCount += 1;
           } else {
-            await interaction.reply({
-              content: "Card already added to your wishlist.",
-              ephemeral: true,
+            wishlistData.cards.push({
+              name: cardName,
+              wishlistCount: 1
             });
           }
-          return;
+
+          saveWishlistData(wishlistData);
+
+          await interaction.reply({
+            content: `Added **${cardName}** to your wishlist.`,
+          });
+        } else {
+          await interaction.reply({
+            content: "Card already added to your wishlist.",
+          });
         }
 
-        const updatedEmbed = generateEmbed(selectedCardImages, currentIndex, data);
-
-        await interaction.update({
-          embeds: [updatedEmbed],
-          files: [{
-            attachment: selectedCardImages[currentIndex].path,
-            name: "cardImage.png"
-          }],
-          components: [createCardButtonsRow()]
-        });
+        return; // Ensure that no further updates are attempted after this reply
       }
+
+      const updatedEmbed = generateEmbed(currentIndex);
+
+      await interaction.update({
+        embeds: [updatedEmbed],
+        files: [{
+          attachment: cardImages[currentIndex].path,
+          name: "cardImage.png"
+        }, ], // Always refer to the attached image as 'cardImage.png'
+      });
     });
 
     collector.on("end", async () => {

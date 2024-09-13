@@ -235,9 +235,6 @@ module.exports = {
           `Your item is on cooldown. Please wait \`${secondsLeft} seconds\` before using it again.`
         );
       }
-      // Set fstar cooldown
-      cooldownData[userId].egacha = now;
-      fs.writeFileSync(cooldownPath, JSON.stringify(cooldownData, null, 2));
 
       await message.reply(
         `You used an fstar item! You now have \`${currencyData[userId].items.fstar !== undefined
@@ -432,6 +429,10 @@ module.exports = {
         }\` fstar items left.`
       );
 
+      // Set fstar cooldown
+      cooldownData[userId].egacha = now;
+      fs.writeFileSync(cooldownPath, JSON.stringify(cooldownData, null, 2));
+      
       // Edit the original message to replace the GIF with the card
       await gifMessage.edit({
         embeds: [cardEmbed],

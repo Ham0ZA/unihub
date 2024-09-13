@@ -39,6 +39,10 @@
     {
       "name": "Erina Nakiri",
       "wishlistCount": 1
+    },
+    {
+      "name": "Alucard",
+      "wishlistCount": 1
     }
   ],
   "users": {
@@ -55,7 +59,8 @@
       "Erina Nakiri"
     ],
     "719559424695468032": [
-      "Toji Fushiguro"
+      "Toji Fushiguro",
+      "Alucard"
     ],
     "1132665775405150238": [
       "Satoru Gojo"
