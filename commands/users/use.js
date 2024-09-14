@@ -25,13 +25,13 @@ module.exports = {
             return message.reply('You need to specify an item to use.');
         }
 
-        const itemName = args[0].toLowerCase();
+        const itemName = args.slice(0, 2).join(' ').toLowerCase();
         const userId = message.author.id;
         const userData = getUserData(userId);
 
         // Check if the user has the item in their inventory
         if (!userData.items || !userData.items[itemName] || userData.items[itemName] <= 0) {
-            return message.reply(`You don't have the item \`${itemName}.\``);
+            return message.reply(`You don't have the item \`${itemName}\``);
         }
 
         // Decrease the item count or remove it from the inventory if the count is 1

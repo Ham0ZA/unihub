@@ -847,16 +847,152 @@
       "print": 3,
       "numberOnList": 106,
       "code": "RKMFR6"
+    },
+    {
+      "name": "Aurora",
+      "anime": "Eminence in Shadow",
+      "rarity": ":third_place:",
+      "print": 2,
+      "numberOnList": 107,
+      "code": "YAVVZP"
+    },
+    {
+      "name": "Satoru Gojo",
+      "anime": "Jujutsu Kaisen",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 6,
+      "numberOnList": 108,
+      "code": "ODMNXA"
+    },
+    {
+      "name": "Kaiden",
+      "anime": "Eleceed",
+      "rarity": ":third_place:",
+      "print": 6,
+      "numberOnList": 109,
+      "code": "9L0DZ3"
+    },
+    {
+      "name": "Yuno",
+      "anime": "Black Clover",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 1,
+      "numberOnList": 110,
+      "code": "CM7ZOM"
+    },
+    {
+      "name": "Joe",
+      "anime": "Megalo Box",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 2,
+      "numberOnList": 111,
+      "code": "P1CBJA"
+    },
+    {
+      "name": "Hinata Hyuga",
+      "anime": "Naruto",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 2,
+      "numberOnList": 112,
+      "code": "I3FVVZ"
+    },
+    {
+      "name": "Mei Mei",
+      "anime": "Jujutsu Kaisen",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 3,
+      "numberOnList": 113,
+      "code": "8JRSAG"
+    },
+    {
+      "name": "Sung Jin Woo",
+      "anime": "Solo Leveling",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 4,
+      "numberOnList": 114,
+      "code": "FEDKY8"
+    },
+    {
+      "name": "Joe",
+      "anime": "Megalo Box",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 3,
+      "numberOnList": 115,
+      "code": "328RN3"
+    },
+    {
+      "name": "Madara Uchiha",
+      "anime": "Naruto",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 8,
+      "numberOnList": 116,
+      "code": "F37UOU"
+    },
+    {
+      "name": "Naruto",
+      "anime": "Naruto",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 5,
+      "numberOnList": 117,
+      "code": "QAET4E"
+    },
+    {
+      "name": "Yuno",
+      "anime": "Black Clover",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 2,
+      "numberOnList": 118,
+      "code": "PTTSD5"
+    },
+    {
+      "name": "Asta",
+      "anime": "Black Clover",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 6,
+      "numberOnList": 119,
+      "code": "8JWKK4"
+    },
+    {
+      "name": "Itachi Uchiha",
+      "anime": "Naruto",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 4,
+      "numberOnList": 120,
+      "code": "D5M1G9"
+    },
+    {
+      "name": "Yuji Itadori",
+      "anime": "Jujutsu Kaisen",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 5,
+      "numberOnList": 121,
+      "code": "OHHRNV"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 9,
+      "numberOnList": 122,
+      "code": "YCCZT2"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 10,
+      "numberOnList": 123,
+      "code": "BCXEFF"
     }
   ],
   "prints": {
     "Escanor": {
-      "rare": 3,
+      "rare": 4,
       "common": 9,
-      "unique": 3
+      "unique": 4
     },
     "Joe": {
-      "unique": 1,
+      "unique": 3,
       "common": 4,
       "legendary": 3,
       "rare": 3
@@ -869,7 +1005,7 @@
       "rare": 3,
       "common": 6,
       "legendary": 1,
-      "unique": 2
+      "unique": 4
     },
     "Broly": {
       "unique": 2,
@@ -884,22 +1020,23 @@
     "Sung Jin Woo": {
       "common": 9,
       "rare": 2,
-      "unique": 1
+      "unique": 5
     },
     "Yuno": {
       "legendary": 4,
       "common": 8,
-      "rare": 1
+      "rare": 1,
+      "unique": 3
     },
     "Satoru Gojo": {
       "rare": 3,
-      "unique": 5,
+      "unique": 6,
       "common": 8,
       "legendary": 1
     },
     "Madara Uchiha": {
       "rare": 3,
-      "unique": 6,
+      "unique": 8,
       "common": 5,
       "legendary": 1
     },
@@ -911,17 +1048,17 @@
       "rare": 3,
       "legendary": 1,
       "common": 4,
-      "unique": 7
+      "unique": 10
     },
     "Mei Mei": {
-      "unique": 2,
+      "unique": 3,
       "common": 2,
       "legendary": 3
     },
     "Asta": {
       "common": 8,
       "rare": 4,
-      "unique": 4,
+      "unique": 7,
       "legendary": 1
     },
     "Seo Jiwoo": {
@@ -949,7 +1086,7 @@
       "legendary": 1
     },
     "Kaiden": {
-      "common": 5,
+      "common": 6,
       "rare": 4,
       "legendary": 1
     },
@@ -962,12 +1099,12 @@
       "legendary": 1,
       "rare": 4,
       "common": 5,
-      "unique": 3
+      "unique": 5
     },
     "Toji Fushiguro": {
       "common": 2,
       "rare": 2,
-      "legendary": 1
+      "legendary": 2
     },
     "": {
       "common": 1
@@ -998,14 +1135,14 @@
     },
     "Yuji Itadori": {
       "common": 5,
-      "unique": 4,
+      "unique": 5,
       "legendary": 1,
       "rare": 3
     },
     "Hinata Hyuga": {
       "rare": 4,
       "legendary": 1,
-      "unique": 1
+      "unique": 2
     },
     "Asta & Yuno": {
       "rare": 2,
@@ -1042,13 +1179,13 @@
     "Roronoa  Zoro": {
       "common": 5,
       "legendary": 1,
-      "unique": 1
+      "unique": 2
     },
     "Gojo & Geto": {
       "unique": 2
     },
     "Aurora": {
-      "common": 1,
+      "common": 2,
       "rare": 1
     },
     "Alpha": {
@@ -3004,6 +3141,118 @@
       "print": 10,
       "numberOnList": 23,
       "code": "JD62BL"
+    },
+    {
+      "name": "Toji Fushiguro",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":first_place:",
+      "print": 2,
+      "numberOnList": 24,
+      "code": "4B5XY2"
+    },
+    {
+      "name": "Escanor",
+      "anime": "The Seven Deadly Sins",
+      "rarity": ":second_place:",
+      "print": 4,
+      "numberOnList": 25,
+      "code": "98M5L0"
+    },
+    {
+      "name": "Sung Jin Woo",
+      "anime": "Solo Leveling",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 2,
+      "numberOnList": 26,
+      "code": "UTRJZ5"
+    },
+    {
+      "name": "Escanor",
+      "anime": "The Seven Deadly Sins",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 4,
+      "numberOnList": 27,
+      "code": "4KHCTZ"
+    },
+    {
+      "name": "Asta",
+      "anime": "Black Clover",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 5,
+      "numberOnList": 28,
+      "code": "M57G77"
+    },
+    {
+      "name": "Itachi Uchiha",
+      "anime": "Naruto",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 3,
+      "numberOnList": 29,
+      "code": "GXQU9L"
+    },
+    {
+      "name": "Sung Jin Woo",
+      "anime": "Solo Leveling",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 3,
+      "numberOnList": 30,
+      "code": "TSFFRJ"
+    },
+    {
+      "name": "Madara Uchiha",
+      "anime": "Naruto",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 7,
+      "numberOnList": 31,
+      "code": "JET0EI"
+    },
+    {
+      "name": "Naruto",
+      "anime": "Naruto",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 4,
+      "numberOnList": 32,
+      "code": "KZ3HZ0"
+    },
+    {
+      "name": "Sung Jin Woo",
+      "anime": "Solo Leveling",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 5,
+      "numberOnList": 33,
+      "code": "AMAMXJ"
+    },
+    {
+      "name": "Asta",
+      "anime": "Black Clover",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 7,
+      "numberOnList": 34,
+      "code": "N1HRNH"
+    },
+    {
+      "name": "Yuno",
+      "anime": "Black Clover",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 3,
+      "numberOnList": 35,
+      "code": "6GYI6M"
+    },
+    {
+      "name": "Suguru Geto",
+      "anime": "Jujutsu Kaisen",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 8,
+      "numberOnList": 36,
+      "code": "1K42TP"
+    },
+    {
+      "name": "Roronoa  Zoro",
+      "anime": "One Piece",
+      "rarity": "<a:uniquee:1274020241214672927>",
+      "print": 2,
+      "numberOnList": 37,
+      "code": "0070CO"
     }
   ],
   "929533173002559579": [
