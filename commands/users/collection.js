@@ -64,7 +64,8 @@ module.exports = {
                 const number = item.numberOnList.toString().padStart(5, ' ');
                 const print = item.print.toString().padStart(5, ' ');
                 const rarity = item.rarity ? item.rarity.padStart(8, ' ') : 'Unknown'; // Added rarity
-                return `\`${number}\` · \`${print}#\` · ${rarity} · \`${item.code}\` · ${item.name} · **${item.anime}**`;
+                const tagString = item.tag ? ` · ${item.tag}` : ''; // Added tag handling
+                return `\`${number}\` ${tagString} · \`${print}#\` · ${rarity} · \`${item.code}\` · ${item.name} · **${item.anime}**`;
             }).join('\n');
 
             return new EmbedBuilder()

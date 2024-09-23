@@ -379,7 +379,6 @@ module.exports = {
       context.strokeText(printText, 20, 38); // Draw the outline for the print number
       context.fillText(printText, 20, 38); // Draw the filled text for the print number
 
-      // Save the generated image with a unique name
       const imagePath = path.join(generatedImagesPath, `${uniqueCode}.png`);
       const buffer = canvas.toBuffer();
       fs.writeFileSync(imagePath, buffer);

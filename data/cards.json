@@ -983,6 +983,39 @@
       "print": 10,
       "numberOnList": 123,
       "code": "BCXEFF"
+    },
+    {
+      "name": "Hinata Hyuga",
+      "anime": "Naruto",
+      "rarity": ":first_place:",
+      "print": 2,
+      "numberOnList": 124,
+      "code": "KWEO9J"
+    },
+    {
+      "name": "Toji Fushiguro",
+      "anime": "Jujutsu Kaisen",
+      "rarity": ":second_place:",
+      "print": 3,
+      "numberOnList": 125,
+      "code": "0320M8"
+    },
+    {
+      "name": "Alucard",
+      "anime": "Hellsing",
+      "rarity": ":third_place:",
+      "print": 1,
+      "numberOnList": 126,
+      "code": "Y8DBSB"
+    },
+    {
+      "name": "Aurora",
+      "anime": "Eminence in Shadow",
+      "rarity": ":third_place:",
+      "print": 3,
+      "numberOnList": 127,
+      "code": "N5GM1Z",
+      "tag": "🍓"
     }
   ],
   "prints": {
@@ -1103,7 +1136,7 @@
     },
     "Toji Fushiguro": {
       "common": 2,
-      "rare": 2,
+      "rare": 3,
       "legendary": 2
     },
     "": {
@@ -1141,7 +1174,7 @@
     },
     "Hinata Hyuga": {
       "rare": 4,
-      "legendary": 1,
+      "legendary": 2,
       "unique": 2
     },
     "Asta & Yuno": {
@@ -1185,12 +1218,15 @@
       "unique": 2
     },
     "Aurora": {
-      "common": 2,
+      "common": 3,
       "rare": 1
     },
     "Alpha": {
       "rare": 1,
       "unique": 1
+    },
+    "Alucard": {
+      "common": 1
     }
   },
   "411175897236897805": [
